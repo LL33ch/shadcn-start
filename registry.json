@@ -1,0 +1,1894 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "shadcn-start",
+  "homepage": "https://github.com/LL33ch/shadcn-start",
+  "items": [
+    {
+      "name": "theme",
+      "type": "registry:theme",
+      "title": "Theme",
+      "description": "Colour tokens for light and dark, spring curves and the shared motion of menus, sheets, toasts and tabs.",
+      "dependencies": [
+        "tw-animate-css",
+        "shadcn"
+      ],
+      "cssVars": {
+        "theme": {
+          "font-heading": "var(--font-sans)",
+          "font-sans": "var(--font-sans)",
+          "color-sidebar-ring": "var(--sidebar-ring)",
+          "color-sidebar-border": "var(--sidebar-border)",
+          "color-sidebar-accent-foreground": "var(--sidebar-accent-foreground)",
+          "color-sidebar-accent": "var(--sidebar-accent)",
+          "color-sidebar-primary-foreground": "var(--sidebar-primary-foreground)",
+          "color-sidebar-primary": "var(--sidebar-primary)",
+          "color-sidebar-foreground": "var(--sidebar-foreground)",
+          "color-sidebar": "var(--sidebar)",
+          "color-chart-5": "var(--chart-5)",
+          "color-chart-4": "var(--chart-4)",
+          "color-chart-3": "var(--chart-3)",
+          "color-chart-2": "var(--chart-2)",
+          "color-chart-1": "var(--chart-1)",
+          "color-ring": "var(--ring)",
+          "color-input": "var(--input)",
+          "color-border": "var(--border)",
+          "color-destructive": "var(--destructive)",
+          "color-accent-foreground": "var(--accent-foreground)",
+          "color-accent": "var(--accent)",
+          "color-muted-foreground": "var(--muted-foreground)",
+          "color-muted": "var(--muted)",
+          "color-secondary-foreground": "var(--secondary-foreground)",
+          "color-secondary": "var(--secondary)",
+          "color-primary-foreground": "var(--primary-foreground)",
+          "color-primary": "var(--primary)",
+          "color-popover-foreground": "var(--popover-foreground)",
+          "color-popover": "var(--popover)",
+          "color-card-foreground": "var(--card-foreground)",
+          "color-card": "var(--card)",
+          "color-foreground": "var(--foreground)",
+          "color-background": "var(--background)",
+          "radius-sm": "calc(var(--radius) * 0.6)",
+          "radius-md": "calc(var(--radius) * 0.8)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "calc(var(--radius) * 1.4)",
+          "radius-2xl": "calc(var(--radius) * 1.8)",
+          "radius-3xl": "calc(var(--radius) * 2.2)",
+          "radius-4xl": "calc(var(--radius) * 2.6)",
+          "color-field": "var(--field)",
+          "color-knob": "var(--knob)",
+          "color-faint": "var(--faint)",
+          "color-ok": "var(--ok)",
+          "color-warn": "var(--warn)",
+          "color-bar": "var(--bar)",
+          "color-scrim": "var(--scrim)",
+          "shadow-sheet": "var(--sheet-shadow)",
+          "font-mono": "var(--font-mono)"
+        },
+        "light": {
+          "background": "#f2f2f1",
+          "foreground": "#0b0b0b",
+          "card": "#ffffff",
+          "card-foreground": "#0b0b0b",
+          "popover": "#ffffff",
+          "popover-foreground": "#0b0b0b",
+          "primary": "#2b9dff",
+          "primary-foreground": "#ffffff",
+          "secondary": "#e8e8e7",
+          "secondary-foreground": "#0b0b0b",
+          "muted": "#f3f3f2",
+          "muted-foreground": "#6d6d6b",
+          "accent": "#e8e8e7",
+          "accent-foreground": "#0b0b0b",
+          "destructive": "#ff383c",
+          "border": "rgba(0, 0, 0, 0.07)",
+          "input": "#f3f3f2",
+          "ring": "rgba(11, 11, 11, 0.3)",
+          "chart-1": "#2b9dff",
+          "chart-2": "#6d6d6b",
+          "chart-3": "#a6a6a4",
+          "chart-4": "#e8e8e7",
+          "chart-5": "#f3f3f2",
+          "radius": "1rem",
+          "sidebar": "#ffffff",
+          "sidebar-foreground": "#0b0b0b",
+          "sidebar-primary": "#2b9dff",
+          "sidebar-primary-foreground": "#ffffff",
+          "sidebar-accent": "#e8e8e7",
+          "sidebar-accent-foreground": "#0b0b0b",
+          "sidebar-border": "rgba(0, 0, 0, 0.07)",
+          "sidebar-ring": "rgba(11, 11, 11, 0.3)",
+          "field": "#f3f3f2",
+          "knob": "#e8e8e7",
+          "faint": "#a6a6a4",
+          "ok": "#30d158",
+          "warn": "#ff8d28",
+          "bar": "rgba(11, 11, 11, 0.11)",
+          "accent-soft": "rgba(43, 157, 255, 0.12)",
+          "ok-soft": "rgba(48, 209, 88, 0.12)",
+          "bad-soft": "rgba(255, 56, 60, 0.1)",
+          "line": "rgba(0, 0, 0, 0.07)",
+          "selection-bg": "rgba(78, 175, 255, 0.22)",
+          "selection-fg": "#0a76cf",
+          "toast": "#0b0b0b",
+          "toast-fg": "#f2f2f1",
+          "qr-bg": "#ffffff",
+          "seg": "#ffffff",
+          "seg-shadow": "0 1px 2px rgba(0, 0, 0, 0.06), 0 2px 8px -2px rgba(0, 0, 0, 0.08)",
+          "glass-bg": "linear-gradient(rgba(245, 245, 245, 0.6), rgba(245, 245, 245, 0.6))",
+          "glass-edge": "rgba(0, 0, 0, 0.04)",
+          "glass-sep": "rgba(0, 0, 0, 0.03)",
+          "glass-text": "#1a1a1a",
+          "glass-sub": "#727272",
+          "glass-hl": "color-mix(in srgb, #ffffff, #0b0b0b 11%)",
+          "glass-shadow": "0 8px 32px rgba(0, 0, 0, 0.12)",
+          "pop-shadow": "0 18px 44px -14px rgba(0, 0, 0, 0.2)",
+          "sheet-shadow": "0 24px 64px -18px rgba(0, 0, 0, 0.22)",
+          "scrim": "rgba(236, 236, 235, 0.62)",
+          "gi-a": "rgba(250, 250, 249, 0.72)",
+          "gi-b": "rgba(206, 206, 204, 0.5)",
+          "gi-rim": "rgba(255, 255, 255, 0.9)",
+          "gi-edge": "rgba(0, 0, 0, 0.11)",
+          "gi-detail": "rgba(28, 28, 28, 0.72)",
+          "t-grey-a": "#a9a9a7",
+          "t-grey-b": "#3d3d3c",
+          "t-blue-a": "#7cc4ff",
+          "t-blue-b": "#0a6fd6",
+          "t-green-a": "#82e070",
+          "t-green-b": "#30d158",
+          "t-red-a": "#ff9090",
+          "t-red-b": "#ff383c",
+          "t-orange-a": "#ffc08f",
+          "t-orange-b": "#ff8d28",
+          "ease-out": "cubic-bezier(0.23, 1, 0.32, 1)",
+          "ease-in": "cubic-bezier(0.55, 0, 1, 0.45)",
+          "spring-bouncy-dur": "572ms",
+          "spring-bouncy": "linear(0, 0.0113, 0.0424, 0.0893, 0.1486, 0.2167, 0.2909, 0.3685, 0.4472, 0.5251, 0.6007, 0.6726, 0.7399, 0.802, 0.8582, 0.9083, 0.9522, 0.99, 1.0218, 1.0479, 1.0687, 1.0846, 1.0961, 1.1035, 1.1075, 1.1085, 1.107, 1.1033, 1.098, 1.0915, 1.084, 1.0759, 1.0674, 1.0589, 1.0505, 1.0424, 1.0347, 1.0275, 1.0209, 1.0149, 1.0096, 1.0049, 1.001, 0.9976, 0.9949, 0.9928, 0.9912, 0.99, 0.9893, 0.989, 0.989, 0.9892, 0.9897, 0.9903, 0.9911, 0.992, 0.9929, 0.9939, 0.9949, 0.9958, 0.9968, 0.9977, 0.9985, 0.9993, 1)",
+          "spring-smooth-dur": "524ms",
+          "spring-smooth": "linear(0, 0.0091, 0.0333, 0.0683, 0.1109, 0.1584, 0.2087, 0.2603, 0.312, 0.3628, 0.412, 0.4593, 0.5042, 0.5466, 0.5863, 0.6234, 0.6578, 0.6896, 0.7189, 0.7458, 0.7705, 0.793, 0.8135, 0.8322, 0.8491, 0.8645, 0.8784, 0.891, 0.9023, 0.9125, 0.9218, 0.9301, 0.9375, 0.9442, 0.9502, 0.9556, 0.9604, 0.9648, 0.9687, 0.9721, 0.9752, 0.978, 0.9805, 0.9827, 0.9847, 0.9865, 0.9881, 0.9895, 0.9908, 0.9919, 0.9929, 0.9938, 0.9946, 0.9954, 0.996, 0.9966, 0.9972, 0.9976, 0.9981, 0.9985, 0.9988, 0.9992, 0.9995, 0.9997, 1)",
+          "spring-pop-dur": "544ms",
+          "spring-pop": "linear(0, 0.0175, 0.0651, 0.1356, 0.2223, 0.3194, 0.4216, 0.5246, 0.6246, 0.719, 0.8054, 0.8825, 0.9493, 1.0055, 1.0512, 1.0867, 1.1127, 1.1301, 1.1398, 1.1431, 1.1408, 1.1343, 1.1243, 1.112, 1.0982, 1.0836, 1.0688, 1.0545, 1.0409, 1.0284, 1.0173, 1.0076, 0.9995, 0.9928, 0.9876, 0.9838, 0.9812, 0.9798, 0.9792, 0.9795, 0.9804, 0.9817, 0.9834, 0.9854, 0.9874, 0.9895, 0.9915, 0.9934, 0.9952, 0.9968, 0.9981, 0.9993, 1.0002, 1.0009, 1.0014, 1.0017, 1.0019, 1.0019, 1.0018, 1.0016, 1.0014, 1.0011, 1.0007, 1.0004, 1)",
+          "spring-soft-dur": "476ms",
+          "spring-soft": "linear(0, 0.0098, 0.0365, 0.0765, 0.1264, 0.1835, 0.2453, 0.3098, 0.3753, 0.4402, 0.5036, 0.5645, 0.6221, 0.6761, 0.7261, 0.7719, 0.8133, 0.8506, 0.8836, 0.9127, 0.9379, 0.9596, 0.978, 0.9933, 1.0059, 1.016, 1.0239, 1.0299, 1.0342, 1.037, 1.0386, 1.0392, 1.039, 1.038, 1.0365, 1.0347, 1.0325, 1.0301, 1.0276, 1.0251, 1.0226, 1.0201, 1.0178, 1.0155, 1.0134, 1.0115, 1.0097, 1.0081, 1.0067, 1.0054, 1.0043, 1.0033, 1.0025, 1.0018, 1.0012, 1.0008, 1.0004, 1.0002, 1, 0.9999, 0.9998, 0.9998, 0.9998, 0.9999, 1)",
+          "spring-lead-dur": "396ms",
+          "spring-lead": "linear(0, 0.0091, 0.033, 0.0678, 0.11, 0.1572, 0.2073, 0.2587, 0.3102, 0.3608, 0.41, 0.4572, 0.5021, 0.5445, 0.5842, 0.6213, 0.6558, 0.6877, 0.7171, 0.7441, 0.7688, 0.7914, 0.812, 0.8308, 0.8478, 0.8633, 0.8773, 0.8899, 0.9013, 0.9116, 0.9209, 0.9293, 0.9368, 0.9435, 0.9495, 0.955, 0.9598, 0.9642, 0.9681, 0.9715, 0.9747, 0.9774, 0.9799, 0.9821, 0.9841, 0.9859, 0.9874, 0.9888, 0.9901, 0.9912, 0.9922, 0.993, 0.9938, 0.9945, 0.9951, 0.9957, 0.9962, 0.9966, 0.997, 0.9973, 0.9976, 0.9979, 0.9981, 0.9983, 1)",
+          "spring-glide-dur": "324ms",
+          "spring-glide": "linear(0, 0.0077, 0.0286, 0.0602, 0.0999, 0.1456, 0.1957, 0.2485, 0.3027, 0.3574, 0.4115, 0.4645, 0.5157, 0.5647, 0.6111, 0.6548, 0.6956, 0.7335, 0.7683, 0.8002, 0.8293, 0.8555, 0.879, 0.9001, 0.9187, 0.9352, 0.9495, 0.962, 0.9728, 0.982, 0.9897, 0.9962, 1.0016, 1.0059, 1.0093, 1.012, 1.014, 1.0154, 1.0163, 1.0168, 1.017, 1.0168, 1.0164, 1.0159, 1.0152, 1.0144, 1.0135, 1.0125, 1.0115, 1.0105, 1.0096, 1.0086, 1.0077, 1.0068, 1.0059, 1.0051, 1.0044, 1.0036, 1.003, 1.0024, 1.0018, 1.0013, 1.0008, 1.0004, 1)"
+        },
+        "dark": {
+          "background": "#080808",
+          "foreground": "#ededed",
+          "card": "#121212",
+          "card-foreground": "#ededed",
+          "popover": "#121212",
+          "popover-foreground": "#ededed",
+          "primary": "#4eafff",
+          "primary-foreground": "#ffffff",
+          "secondary": "#232323",
+          "secondary-foreground": "#ededed",
+          "muted": "#161616",
+          "muted-foreground": "#8c8c8a",
+          "accent": "#232323",
+          "accent-foreground": "#ededed",
+          "destructive": "#ff383c",
+          "border": "rgba(255, 255, 255, 0.06)",
+          "input": "#161616",
+          "ring": "rgba(237, 237, 237, 0.35)",
+          "chart-1": "#4eafff",
+          "chart-2": "#8c8c8a",
+          "chart-3": "#4f4f4e",
+          "chart-4": "#232323",
+          "chart-5": "#161616",
+          "sidebar": "#121212",
+          "sidebar-foreground": "#ededed",
+          "sidebar-primary": "#4eafff",
+          "sidebar-primary-foreground": "#ffffff",
+          "sidebar-accent": "#232323",
+          "sidebar-accent-foreground": "#ededed",
+          "sidebar-border": "rgba(255, 255, 255, 0.06)",
+          "sidebar-ring": "rgba(237, 237, 237, 0.35)",
+          "field": "#161616",
+          "knob": "#232323",
+          "faint": "#4f4f4e",
+          "ok": "#30d158",
+          "warn": "#ff8d28",
+          "bar": "rgba(237, 237, 237, 0.13)",
+          "accent-soft": "rgba(78, 175, 255, 0.13)",
+          "ok-soft": "rgba(48, 209, 88, 0.14)",
+          "bad-soft": "rgba(255, 56, 60, 0.13)",
+          "line": "rgba(255, 255, 255, 0.06)",
+          "selection-bg": "rgba(131, 209, 255, 0.25)",
+          "selection-fg": "#64c6ff",
+          "toast": "#232323",
+          "toast-fg": "#ededed",
+          "qr-bg": "#0a0a0a",
+          "seg": "rgba(237, 237, 237, 0.05)",
+          "seg-shadow": "0 0 0 transparent",
+          "glass-bg": "linear-gradient(rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.04)), rgba(0, 0, 0, 0.4)",
+          "glass-edge": "rgba(255, 255, 255, 0.05)",
+          "glass-sep": "rgba(255, 255, 255, 0.04)",
+          "glass-text": "#f5f5f5",
+          "glass-sub": "#8a8a8a",
+          "glass-hl": "color-mix(in srgb, #121212, #ededed 8%)",
+          "glass-shadow": "0 0 0 transparent",
+          "pop-shadow": "0 18px 48px -14px rgba(0, 0, 0, 0.75)",
+          "sheet-shadow": "0 24px 64px -16px rgba(0, 0, 0, 0.6)",
+          "scrim": "rgba(8, 8, 8, 0.8)",
+          "gi-a": "rgba(255, 255, 255, 0.58)",
+          "gi-b": "rgba(255, 255, 255, 0.14)",
+          "gi-rim": "rgba(255, 255, 255, 0.5)",
+          "gi-edge": "rgba(0, 0, 0, 0)",
+          "gi-detail": "#ffffff",
+          "t-grey-a": "#cfcfcd",
+          "t-grey-b": "#5a5a59",
+          "t-blue-a": "#a6d9ff",
+          "t-blue-b": "#1d84e6",
+          "t-green-a": "#a8f29c",
+          "t-green-b": "#30d158",
+          "t-red-a": "#ffadad",
+          "t-red-b": "#ff383c"
+        }
+      },
+      "css": {
+        ":root": {
+          "color-scheme": "light"
+        },
+        ".dark": {
+          "color-scheme": "dark"
+        },
+        "@layer base": {
+          "html": {
+            "scrollbar-gutter": "stable",
+            "overflow-anchor": "none",
+            "touch-action": "manipulation"
+          },
+          "body": {
+            "font-size": "15px",
+            "line-height": "22px",
+            "letter-spacing": "-0.011em",
+            "-webkit-font-smoothing": "antialiased",
+            "min-height": "100dvh",
+            "cursor": "default"
+          },
+          "::selection": {
+            "background": "var(--selection-bg)",
+            "color": "var(--selection-fg)"
+          },
+          "button:not(:disabled), [role=\"button\"]:not(:disabled)": {
+            "cursor": "pointer"
+          },
+          "input, textarea": {
+            "cursor": "text"
+          }
+        },
+        "@layer components": {
+          ".gi": {
+            "width": "24px",
+            "height": "24px"
+          }
+        },
+        ".gi": {
+          "flex": "none",
+          "overflow": "visible",
+          "--ta": "var(--t-grey-a)",
+          "--tb": "var(--t-grey-b)"
+        },
+        ".gi.t-blue": {
+          "--ta": "var(--t-blue-a)",
+          "--tb": "var(--t-blue-b)"
+        },
+        ".gi.t-green": {
+          "--ta": "var(--t-green-a)",
+          "--tb": "var(--t-green-b)"
+        },
+        ".gi.t-red": {
+          "--ta": "var(--t-red-a)",
+          "--tb": "var(--t-red-b)"
+        },
+        ".gi.t-orange": {
+          "--ta": "var(--t-orange-a)",
+          "--tb": "var(--t-orange-b)"
+        },
+        ".gi .ta": {
+          "stop-color": "var(--ta)"
+        },
+        ".gi .tb": {
+          "stop-color": "var(--tb)"
+        },
+        ".gi .fa": {
+          "stop-color": "var(--gi-a)"
+        },
+        ".gi .fb": {
+          "stop-color": "var(--gi-b)"
+        },
+        ".gi .fc": {
+          "stop-color": "var(--ta)",
+          "stop-opacity": "0.28"
+        },
+        ".gi .ge": {
+          "stroke": "var(--gi-edge)"
+        },
+        ".gi .gr": {
+          "stroke": "var(--gi-rim)"
+        },
+        ".gi .gd": {
+          "stroke": "var(--gi-detail)"
+        },
+        "@media (prefers-reduced-motion: reduce)": {
+          "*": {
+            "animation-duration": "1ms !important",
+            "animation-iteration-count": "1 !important",
+            "transition-duration": "1ms !important"
+          }
+        },
+        "@keyframes notice-in": {
+          "from": {
+            "opacity": "0",
+            "filter": "blur(6px)",
+            "translate": "0 -6px"
+          }
+        },
+        "[data-slot=\"button\"][data-orbs] > :not([data-slot=\"button-orb\"])": {
+          "transition": "opacity 340ms var(--ease-out) 70ms,\r\n    filter 340ms var(--ease-out) 70ms,\r\n    scale 340ms var(--ease-out) 70ms"
+        },
+        "[data-slot=\"button\"][data-orbs][data-busy] > :not([data-slot=\"button-orb\"])": {
+          "opacity": "0",
+          "filter": "blur(5px)",
+          "scale": "0.86",
+          "transition": "opacity 180ms var(--ease-in),\r\n    filter 180ms var(--ease-in),\r\n    scale 180ms var(--ease-in)"
+        },
+        "[data-slot=\"button-orb\"]": {
+          "position": "absolute",
+          "inset": "0",
+          "margin": "auto",
+          "width": "28px",
+          "height": "28px",
+          "overflow": "hidden",
+          "contain": "strict",
+          "pointer-events": "none",
+          "display": "none",
+          "opacity": "0",
+          "filter": "blur(5px)",
+          "scale": "0.6",
+          "transition": "opacity 180ms var(--ease-in),\r\n    filter 180ms var(--ease-in),\r\n    scale 180ms var(--ease-in),\r\n    display 180ms allow-discrete"
+        },
+        "[data-busy] > [data-slot=\"button-orb\"]": {
+          "display": "block",
+          "opacity": "1",
+          "filter": "blur(0)",
+          "scale": "1",
+          "transition": "opacity 340ms var(--ease-out) 70ms,\r\n    filter 340ms var(--ease-out) 70ms,\r\n    scale 340ms var(--ease-out) 70ms,\r\n    display 340ms allow-discrete 70ms"
+        },
+        "@starting-style ": {
+          "[data-busy] > [data-slot=\"button-orb\"]": {
+            "opacity": "0",
+            "filter": "blur(5px)",
+            "scale": "0.6"
+          }
+        },
+        "[data-slot=\"button-orb\"] i": {
+          "position": "absolute",
+          "left": "50%",
+          "top": "50%",
+          "width": "7px",
+          "height": "7px",
+          "margin": "-3.5px 0 0 -3.5px",
+          "border-radius": "50%",
+          "background": "currentColor",
+          "animation": "orb-converge 1.8s linear infinite both"
+        },
+        "[data-slot=\"button-orb\"] i:nth-child(2)": {
+          "animation": "orb-breathe 1.8s ease-in-out infinite both"
+        },
+        "@keyframes orb-converge": {
+          "0%": {
+            "transform": "translate(0px, -5px) scale(1)",
+            "filter": "blur(0)",
+            "animation-timing-function": "linear"
+          },
+          "10%": {
+            "transform": "translate(0px, -5px) scale(1)",
+            "filter": "blur(0)",
+            "animation-timing-function": "cubic-bezier(0.55, 0, 1, 0.45)"
+          },
+          "22%": {
+            "transform": "translate(2.15px, -1.25px) scale(0.72)",
+            "filter": "blur(0.8px)",
+            "animation-timing-function": "cubic-bezier(0.33, 1, 0.68, 1)"
+          },
+          "33%": {
+            "transform": "translate(4.3px, 2.5px) scale(1)",
+            "filter": "blur(0)",
+            "animation-timing-function": "linear"
+          },
+          "43%": {
+            "transform": "translate(4.3px, 2.5px) scale(1)",
+            "filter": "blur(0)",
+            "animation-timing-function": "cubic-bezier(0.55, 0, 1, 0.45)"
+          },
+          "55%": {
+            "transform": "translate(0px, 2.5px) scale(0.72)",
+            "filter": "blur(0.8px)",
+            "animation-timing-function": "cubic-bezier(0.33, 1, 0.68, 1)"
+          },
+          "66%": {
+            "transform": "translate(-4.3px, 2.5px) scale(1)",
+            "filter": "blur(0)",
+            "animation-timing-function": "linear"
+          },
+          "77%": {
+            "transform": "translate(-4.3px, 2.5px) scale(1)",
+            "filter": "blur(0)",
+            "animation-timing-function": "cubic-bezier(0.55, 0, 1, 0.45)"
+          },
+          "88%": {
+            "transform": "translate(-2.15px, -1.25px) scale(0.72)",
+            "filter": "blur(0.8px)",
+            "animation-timing-function": "cubic-bezier(0.33, 1, 0.68, 1)"
+          },
+          "100%": {
+            "transform": "translate(0px, -5px) scale(1)",
+            "filter": "blur(0)"
+          }
+        },
+        "@keyframes orb-breathe": {
+          "0%, 100%": {
+            "opacity": "0.16",
+            "filter": "blur(2.4px)",
+            "transform": "scale(1.2)"
+          },
+          "50%": {
+            "opacity": "0.32",
+            "filter": "blur(1.6px)",
+            "transform": "scale(0.98)"
+          }
+        },
+        ":is([data-slot=\"checkbox-indicator\"], [data-slot=\"radio-group-indicator\"])": {
+          "scale": "1",
+          "opacity": "1",
+          "filter": "none",
+          "transition": "scale var(--spring-pop-dur) var(--spring-pop),\r\n    opacity 160ms var(--ease-out),\r\n    filter 160ms var(--ease-out)"
+        },
+        ":is([data-slot=\"checkbox-indicator\"], [data-slot=\"radio-group-indicator\"])[data-starting-style]": {
+          "scale": "0.5",
+          "opacity": "0",
+          "filter": "blur(2px)"
+        },
+        ":is([data-slot=\"checkbox-indicator\"], [data-slot=\"radio-group-indicator\"])[data-ending-style]": {
+          "scale": "0.6",
+          "opacity": "0",
+          "filter": "blur(2px)",
+          "transition": "scale 110ms var(--ease-in),\r\n    opacity 110ms var(--ease-in),\r\n    filter 110ms var(--ease-in)"
+        },
+        ":is([data-slot=\"dialog-overlay\"], [data-slot=\"alert-dialog-overlay\"])": {
+          "opacity": "1",
+          "transition": "opacity 420ms ease-out"
+        },
+        ":is([data-slot=\"dialog-overlay\"], [data-slot=\"alert-dialog-overlay\"])[data-starting-style]": {
+          "opacity": "0"
+        },
+        ":is([data-slot=\"dialog-overlay\"], [data-slot=\"alert-dialog-overlay\"])[data-ending-style]": {
+          "opacity": "0",
+          "transition-duration": "320ms"
+        },
+        ":is([data-slot=\"dialog-content\"], [data-slot=\"alert-dialog-content\"])": {
+          "translate": "none",
+          "transition": "translate 500ms cubic-bezier(0.32, 0.72, 0, 1)"
+        },
+        ":is([data-slot=\"dialog-content\"], [data-slot=\"alert-dialog-content\"])[data-starting-style]": {
+          "translate": "0 calc(100% + 40px)"
+        },
+        ":is([data-slot=\"dialog-content\"], [data-slot=\"alert-dialog-content\"])[data-ending-style]": {
+          "translate": "0 calc(100% + 40px)",
+          "transition-duration": "420ms"
+        },
+        "@media (min-width: 760px)": {
+          ":is([data-slot=\"dialog-overlay\"], [data-slot=\"alert-dialog-overlay\"])": {
+            "transition": "opacity var(--spring-soft-dur) var(--spring-soft)"
+          },
+          ":is([data-slot=\"dialog-overlay\"], [data-slot=\"alert-dialog-overlay\"])[data-ending-style]": {
+            "transition": "opacity 120ms var(--ease-in)"
+          },
+          ":is([data-slot=\"dialog-content\"], [data-slot=\"alert-dialog-content\"])": {
+            "scale": "1",
+            "opacity": "1",
+            "filter": "blur(0)",
+            "transition": "scale var(--spring-soft-dur) var(--spring-soft),\r\n      opacity var(--spring-soft-dur) var(--spring-soft),\r\n      filter var(--spring-soft-dur) var(--spring-soft)"
+          },
+          ":is([data-slot=\"dialog-content\"], [data-slot=\"alert-dialog-content\"])[data-starting-style]": {
+            "translate": "none",
+            "scale": "0.9",
+            "opacity": "0",
+            "filter": "blur(4px)"
+          },
+          ":is([data-slot=\"dialog-content\"], [data-slot=\"alert-dialog-content\"])[data-ending-style]": {
+            "translate": "none",
+            "scale": "0.96",
+            "opacity": "0",
+            "filter": "blur(3px)",
+            "transition": "scale 120ms var(--ease-in),\r\n      opacity 120ms var(--ease-in),\r\n      filter 120ms var(--ease-in)"
+          }
+        },
+        ":is([data-slot=\"dropdown-menu-content\"], [data-slot=\"dropdown-menu-sub-content\"], [data-slot=\"context-menu-content\"], [data-slot=\"context-menu-sub-content\"], [data-slot=\"combobox-content\"], [data-slot=\"popover-content\"], [data-slot=\"select-content\"])": {
+          "scale": "1",
+          "opacity": "1",
+          "filter": "none",
+          "transition": "scale var(--spring-soft-dur) var(--spring-soft),\r\n    opacity var(--spring-soft-dur) var(--spring-soft),\r\n    filter var(--spring-soft-dur) var(--spring-soft)"
+        },
+        ":is([data-slot=\"dropdown-menu-content\"], [data-slot=\"dropdown-menu-sub-content\"], [data-slot=\"context-menu-content\"], [data-slot=\"context-menu-sub-content\"], [data-slot=\"combobox-content\"], [data-slot=\"popover-content\"], [data-slot=\"select-content\"])[data-starting-style]": {
+          "scale": "0.5",
+          "opacity": "0",
+          "filter": "blur(6px)"
+        },
+        ":is([data-slot=\"dropdown-menu-content\"], [data-slot=\"dropdown-menu-sub-content\"], [data-slot=\"context-menu-content\"], [data-slot=\"context-menu-sub-content\"], [data-slot=\"combobox-content\"], [data-slot=\"popover-content\"], [data-slot=\"select-content\"])[data-ending-style]": {
+          "scale": "0.7",
+          "opacity": "0",
+          "filter": "blur(4px)",
+          "transition": "scale 110ms var(--ease-in),\r\n    opacity 110ms var(--ease-in),\r\n    filter 110ms var(--ease-in)"
+        },
+        "[data-slot=\"select-content\"][data-align-trigger=\"true\"]:is([data-starting-style], [data-ending-style])": {
+          "scale": "0.96",
+          "filter": "blur(3px)"
+        },
+        ":is([data-slot=\"dropdown-menu-highlight\"], [data-slot=\"context-menu-highlight\"], [data-slot=\"list-highlight\"])": {
+          "position": "absolute",
+          "left": "0",
+          "top": "0",
+          "width": "0",
+          "height": "0",
+          "border-radius": "18px",
+          "background": "var(--glass-hl)",
+          "opacity": "0",
+          "pointer-events": "none",
+          "transition": "translate var(--spring-glide-dur) var(--spring-glide),\r\n    width var(--spring-glide-dur) var(--spring-glide),\r\n    height var(--spring-glide-dur) var(--spring-glide),\r\n    border-radius var(--spring-glide-dur) var(--spring-glide),\r\n    opacity 160ms var(--ease-out),\r\n    scale 150ms var(--ease-out)"
+        },
+        ":is([data-slot=\"dropdown-menu-content\"], [data-slot=\"dropdown-menu-sub-content\"], [data-slot=\"context-menu-content\"], [data-slot=\"context-menu-sub-content\"]):not(\r\n    :has(> :is([data-slot=\"dropdown-menu-highlight\"], [data-slot=\"context-menu-highlight\"])[data-ready])\r\n  )\r\n  [data-highlighted]": {
+          "background-color": "var(--glass-hl)"
+        },
+        "[data-slot=\"combobox-list\"]:not(:has(> [data-slot=\"list-highlight\"][data-ready]))\r\n  [data-slot=\"combobox-item\"][data-highlighted],\r\n[data-slot=\"select-list\"]:not(:has(> [data-slot=\"list-highlight\"][data-ready]))\r\n  [data-slot=\"select-item\"][data-highlighted],\r\n[data-slot=\"command-list\"]:not(:has(> [data-slot=\"list-highlight\"][data-ready]))\r\n  [data-slot=\"command-item\"][data-selected=\"true\"]": {
+          "background-color": "var(--glass-hl)"
+        },
+        "[data-slot=\"tooltip-content\"]": {
+          "scale": "1",
+          "opacity": "1",
+          "filter": "none",
+          "transition": "scale var(--spring-soft-dur) var(--spring-soft),\r\n    opacity 160ms var(--ease-out),\r\n    filter 160ms var(--ease-out)"
+        },
+        "[data-slot=\"tooltip-content\"][data-starting-style]": {
+          "scale": "0.9",
+          "opacity": "0",
+          "filter": "blur(3px)"
+        },
+        "[data-slot=\"tooltip-content\"][data-ending-style]": {
+          "scale": "0.96",
+          "opacity": "0",
+          "filter": "blur(2px)",
+          "transition": "scale 120ms ease-out,\r\n    opacity 120ms ease-out,\r\n    filter 120ms ease-out"
+        },
+        "[data-slot=\"tooltip-content\"][data-instant]": {
+          "transition": "none"
+        },
+        "[data-slot=\"toast\"]": {
+          "translate": "var(--toast-swipe-movement-x, 0px) var(--toast-swipe-movement-y, 0px)",
+          "scale": "1",
+          "opacity": "1",
+          "filter": "none",
+          "transition": "translate var(--spring-bouncy-dur) var(--spring-bouncy),\r\n    scale var(--spring-bouncy-dur) var(--spring-bouncy),\r\n    opacity 240ms var(--ease-out),\r\n    filter 240ms var(--ease-out)"
+        },
+        "[data-slot=\"toast\"][data-starting-style]": {
+          "translate": "0 18px",
+          "scale": "0.9",
+          "opacity": "0",
+          "filter": "blur(6px)"
+        },
+        "[data-slot=\"toast\"][data-swiping]": {
+          "transition": "none"
+        },
+        "[data-slot=\"toast\"][data-ending-style]": {
+          "translate": "var(--toast-swipe-movement-x, 0px) calc(var(--toast-swipe-movement-y, 0px) + 6px)",
+          "scale": "0.96",
+          "opacity": "0",
+          "filter": "blur(4px)",
+          "transition": "translate 180ms var(--ease-in),\r\n    scale 180ms var(--ease-in),\r\n    opacity 180ms var(--ease-in),\r\n    filter 180ms var(--ease-in)"
+        },
+        "[data-slot=\"toast\"][data-ending-style][data-swipe-direction=\"down\"]": {
+          "translate": "0 calc(var(--toast-swipe-movement-y, 0px) + 120%)"
+        },
+        "[data-slot=\"toast\"][data-ending-style][data-swipe-direction=\"left\"]": {
+          "translate": "calc(var(--toast-swipe-movement-x, 0px) - 120%) 0"
+        },
+        "[data-slot=\"toast\"][data-ending-style][data-swipe-direction=\"right\"]": {
+          "translate": "calc(var(--toast-swipe-movement-x, 0px) + 120%) 0"
+        },
+        "[data-slot=\"toast\"][data-limited]": {
+          "translate": "0 0",
+          "scale": "0.96",
+          "opacity": "0",
+          "filter": "blur(4px)",
+          "pointer-events": "none",
+          "transition": "scale 140ms var(--ease-in),\r\n    opacity 140ms var(--ease-in),\r\n    filter 140ms var(--ease-in)"
+        },
+        "[data-slot=\"tabs-indicator\"]": {
+          "position": "absolute",
+          "left": "var(--active-tab-left)",
+          "right": "var(--active-tab-right)",
+          "top": "var(--active-tab-top)",
+          "bottom": "var(--active-tab-bottom)",
+          "border-radius": "12px",
+          "background": "var(--seg)",
+          "box-shadow": "var(--seg-shadow)",
+          "pointer-events": "none",
+          "transition": "left var(--spring-smooth-dur) var(--spring-smooth),\r\n    right var(--spring-smooth-dur) var(--spring-smooth),\r\n    top var(--spring-smooth-dur) var(--spring-smooth),\r\n    bottom var(--spring-smooth-dur) var(--spring-smooth)"
+        },
+        "[data-slot=\"tabs-indicator\"][data-activation-direction=\"right\"]": {
+          "transition": "left var(--spring-smooth-dur) var(--spring-smooth),\r\n    right var(--spring-lead-dur) var(--spring-lead)"
+        },
+        "[data-slot=\"tabs-indicator\"][data-activation-direction=\"left\"]": {
+          "transition": "left var(--spring-lead-dur) var(--spring-lead),\r\n    right var(--spring-smooth-dur) var(--spring-smooth)"
+        },
+        "[data-slot=\"tabs-indicator\"][data-activation-direction=\"down\"]": {
+          "transition": "top var(--spring-smooth-dur) var(--spring-smooth),\r\n    bottom var(--spring-lead-dur) var(--spring-lead)"
+        },
+        "[data-slot=\"tabs-indicator\"][data-activation-direction=\"up\"]": {
+          "transition": "top var(--spring-lead-dur) var(--spring-lead),\r\n    bottom var(--spring-smooth-dur) var(--spring-smooth)"
+        },
+        "[data-variant=\"line\"] > [data-slot=\"tabs-indicator\"]": {
+          "top": "auto",
+          "bottom": "-4px",
+          "height": "2px",
+          "border-radius": "1px",
+          "background": "var(--foreground)",
+          "box-shadow": "none"
+        },
+        "[data-orientation=\"vertical\"] [data-variant=\"line\"] > [data-slot=\"tabs-indicator\"]": {
+          "top": "var(--active-tab-top)",
+          "bottom": "var(--active-tab-bottom)",
+          "left": "auto",
+          "right": "-4px",
+          "width": "2px",
+          "height": "auto"
+        },
+        "@import \"tw-animate-css\"": {},
+        "@import \"shadcn/tailwind.css\"": {}
+      }
+    },
+    {
+      "name": "menu-glide",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "components/menu-glide.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "press-footprint",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "components/press-footprint.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "files": [
+        {
+          "path": "hooks/use-mobile.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Rows that fold and unfold. They touch while closed; an open row lifts out on a spring.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "One message that says what stops or changes things. A glass icon, a title and a line that adds to it.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "A question that has to be answered. The same sheet as Dialog, with a glass icon, a question and two equal buttons.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/button.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "Displays content within a desired ratio.",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/aspect-ratio.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "attachment",
+      "type": "registry:ui",
+      "title": "Attachment",
+      "description": "Displays a file or image attachment with media, metadata, upload state, and actions.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/button.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/attachment.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "An image element with a fallback for representing the user.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "A small pill that names a state, and a tile for a store or an action.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Displays the path to the current resource using a hierarchy of links.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bubble",
+      "type": "registry:ui",
+      "title": "Bubble",
+      "description": "Displays conversational content in a message bubble. Supports variants, alignment, grouping, reactions, and collapsible content.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/bubble.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "A pill that shrinks under a press. One primary action, quiet and destructive ones, and a busy state with the orb.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "A container that groups related buttons together with consistent styling.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/separator.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/button-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "A calendar component that allows users to select a date or a range of dates.",
+      "dependencies": [
+        "lucide-react",
+        "react-day-picker"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/button.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "A flat raised surface for a header, content and a footer.",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "A carousel with motion and swipe built using Embla.",
+      "dependencies": [
+        "embla-carousel-react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/button.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Beautiful charts. Built using Recharts. Copy and paste into your apps.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/chart.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "A control that allows the user to toggle between checked and not checked.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:ui",
+      "title": "Code Block",
+      "description": "Displays code, terminal output and diffs with an optional header, line numbers and a copy button.",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/button.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "An interactive component which expands/collapses a panel.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Autocomplete input with a list of suggestions.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/input-group.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "Command menu for search and quick actions.",
+      "dependencies": [
+        "cmdk",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/dialog.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/input-group.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/command.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "Displays a menu of actions triggered by a right click.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/context-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "A sheet over the page. A drawer rising from the bottom on a phone, a dialog popping up from its centre on a computer.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/button.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "registry:ui",
+      "title": "Direction",
+      "description": "A provider component that sets the text direction for your application.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/direction.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "A drawer component for React.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/drawer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "A liquid-glass menu that grows out of its button. Rows with icons, a line under the label, groups, checks and submenus.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "Use the Empty component to display an empty state.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/empty.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "Combine labels, controls, and help text to compose accessible form fields and grouped inputs.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/label.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/separator.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "glass-icon",
+      "type": "registry:ui",
+      "title": "Glass Icon",
+      "description": "Any Lucide icon on a piece of frosted glass. The kit's only illustration.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/glass-icon.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "For sighted users to preview content available behind a link.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/hover-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "A text input component for forms and user data entry with built-in styling and accessibility features.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "Add addons, buttons, and helper content to inputs.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/button.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/input.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/textarea.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input OTP",
+      "description": "Accessible one-time password component with copy-paste functionality.",
+      "dependencies": [
+        "input-otp",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/input-otp.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "description": "A versatile component for displaying content with media, title, description, and actions.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/separator.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/item.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "Used to display textual user input from keyboard.",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Renders an accessible label associated with controls.",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "marker",
+      "type": "registry:ui",
+      "title": "Marker",
+      "description": "Displays an inline status, system note, bordered row, or labeled separator in a conversation.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/marker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/dropdown-menu.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "title": "Message",
+      "description": "Displays a message in a conversation, with optional avatar, header, footer, and alignment.",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/message.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message-scroller",
+      "type": "registry:ui",
+      "title": "Message Scroller",
+      "description": "A chat scroll container that anchors turns, opens saved transcripts, follows streamed responses, loads history without jumping, and jumps to any message.",
+      "dependencies": [
+        "@shadcn/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/button.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/message-scroller.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "native-select",
+      "type": "registry:ui",
+      "title": "Native Select",
+      "description": "A styled native HTML select element with consistent design system integration.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/native-select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "A collection of links for navigating websites.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/navigation-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Pagination with page navigation, next and previous links.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/button.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Displays rich content in a portal, triggered by a button.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "questionnaire",
+      "type": "registry:ui",
+      "title": "Questionnaire",
+      "description": "A multi-step questionnaire with single-choice, multiple-choice, freeform, and skippable questions.",
+      "dependencies": [
+        "@shadcn/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/button.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/questionnaire.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "Accessible resizable panel groups and layouts with keyboard support.",
+      "dependencies": [
+        "react-resizable-panels"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/resizable.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Augments native scroll functionality for custom, cross-browser styling.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Displays a list of options for the user to pick from—triggered by a button.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Visually or semantically separates content.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "Extends the Dialog component to display content that complements the main content of the screen.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/button.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "A composable, themeable and customizable sidebar component.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/button.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/input.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/separator.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/sheet.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/skeleton.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/tooltip.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/use-mobile.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Use to show a placeholder while content is loading.",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "An input where the user selects a value from within a given range.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react",
+        "next-themes",
+        "sonner"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sonner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "An indicator that can be used to show a loading state.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "A control that allows the user to toggle between checked and not checked.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "A responsive table component.",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Displays a form textarea or a component that looks like a textarea.",
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "A succinct message that is displayed temporarily.",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/toast.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "A two-state button that can be either on or off.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "A set of two-state buttons that can be toggled on or off.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/toggle.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "trace",
+      "type": "registry:ui",
+      "title": "Trace",
+      "description": "The building block for reasoning, tool calls, sources and more.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/collapsible.json",
+        "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/trace.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

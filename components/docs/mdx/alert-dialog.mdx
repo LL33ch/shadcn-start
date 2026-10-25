@@ -1,0 +1,144 @@
+---
+title: Alert Dialog
+description: A question that has to be answered. The same sheet as Dialog, with a glass icon, a question and two equal buttons.
+base: base
+component: true
+links:
+  doc: https://base-ui.com/react/components/alert-dialog
+  api: https://base-ui.com/react/components/alert-dialog#api-reference
+---
+
+<ComponentPreview
+  name="alert-dialog-demo"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies. The alert dialog has no state and no ``use client``, so it renders on the server.</Step>
+
+```bash
+npm install @base-ui/react class-variance-authority
+```
+
+<Step>Copy and paste the following code into your project. It uses the [Button](/docs/button).</Step>
+
+<ComponentSource
+  name="alert-dialog"
+  title="components/ui/alert-dialog.tsx"
+/>
+
+<Step>Add the `--scrim` and `--sheet-shadow` tokens and the `dialog-*` / `alert-dialog-*` motion rules to your CSS file. They are in `app/globals.css`.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogMedia,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+```
+
+```tsx showLineNumbers
+<AlertDialog>
+  <AlertDialogTrigger>Remove</AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogMedia>
+        <GlassIcon name="trash" tone="red" />
+      </AlertDialogMedia>
+      <AlertDialogTitle>Remove this device?</AlertDialogTitle>
+      <AlertDialogDescription>
+        The router will forget its key.
+      </AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogCancel>Cancel</AlertDialogCancel>
+      <AlertDialogAction variant="red">Remove</AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>
+```
+
+## Composition
+
+```text
+AlertDialog
+├── AlertDialogTrigger
+└── AlertDialogContent
+    ├── AlertDialogHeader
+    │   ├── AlertDialogMedia
+    │   ├── AlertDialogTitle
+    │   └── AlertDialogDescription
+    └── AlertDialogFooter
+        ├── AlertDialogCancel
+        └── AlertDialogAction
+```
+
+## Tones
+
+The icon says what kind of question it is, and the action button agrees with it. A removal has a `red` glass trash and a `red` action. A step that costs something, like Reconnect, has an `orange` icon and an accent button.
+
+<ComponentPreview
+  name="alert-dialog-media"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+A plain choice can use `blue`.
+
+<ComponentPreview
+  name="alert-dialog-tint"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## Without an icon
+
+`AlertDialogMedia` is optional. The title then sits at the top.
+
+<ComponentPreview
+  name="alert-dialog-basic"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## Design
+
+- **Sheet.** The same as [Dialog](/docs/dialog): `card`, radius 36, padding 24 and the sheet shadow. A drawer on a phone and a dialog popping up from its centre from 760px, with the same timings.
+- **Question.** Left-aligned, with 24px at the top. A 64px glass icon, a 20/28 title at 500 and a 15/21 paragraph in the secondary text colour.
+- **Buttons.** Two equal buttons in a row, default size. **Cancel** is `soft`. The action is `accent`, or `red` for a removal. There is no × beside them.
+- **Has to be answered.** A press on the scrim does not close it. A button or Escape does.
+- **Action.** `AlertDialogAction` closes the dialog and runs `onClick`. To keep it open while something runs, control it with `open` and `onOpenChange` and give the button `loading`.
+
+## API Reference
+
+| Part | Description |
+| --- | --- |
+| `AlertDialog` | The root. Controlled with `open` and `onOpenChange`, or `defaultOpen`. |
+| `AlertDialogTrigger` | Opens the dialog. Draw it as a `Button` with `render`. |
+| `AlertDialogContent` | The sheet and its scrim. |
+| `AlertDialogHeader`, `AlertDialogTitle`, `AlertDialogDescription` | The question. |
+| `AlertDialogMedia` | A 64px box for a glass icon. |
+| `AlertDialogFooter` | A row of equal buttons. |
+| `AlertDialogCancel` | Closes the dialog. A `soft` button by default. |
+| `AlertDialogAction` | Closes the dialog. An `accent` button by default; takes the Button's `variant` and `size`. |
+
+See the [Base UI](https://base-ui.com/react/components/alert-dialog#api-reference) documentation for the rest.

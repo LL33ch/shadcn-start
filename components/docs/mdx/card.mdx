@@ -1,0 +1,132 @@
+---
+title: Card
+description: A flat raised surface for a header, content and a footer.
+base: base
+component: true
+---
+
+<ComponentPreview
+  name="card-demo"
+  styleName="base-nova"
+  previewClassName="h-[34rem]"
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Copy and paste the following code into your project. The card has no state and no ``use client``, so it renders on the server.</Step>
+
+<ComponentSource
+  name="card"
+  title="components/ui/card.tsx"
+  styleName="base-nova"
+/>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+```
+
+```tsx showLineNumbers
+<Card>
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+    <CardDescription>Card Description</CardDescription>
+    <CardAction>Card Action</CardAction>
+  </CardHeader>
+  <CardContent>
+    <p>Card Content</p>
+  </CardContent>
+  <CardFooter>
+    <p>Card Footer</p>
+  </CardFooter>
+</Card>
+```
+
+## Composition
+
+```text
+Card
+├── CardHeader
+│   ├── CardTitle
+│   ├── CardDescription
+│   └── CardAction
+├── CardContent
+└── CardFooter
+```
+
+## Size
+
+`size="sm"` tightens the spacing to 16px and the radius to 24.
+
+<ComponentPreview
+  styleName="base-nova"
+  name="card-small"
+  previewClassName="h-[28rem]"
+/>
+
+## Spacing
+
+The inset of every part and the gap between them is the `--card-spacing` variable: 20px by default, 16px for `sm`. Set it on the card to change it.
+
+<ComponentPreview
+  styleName="base-nova"
+  name="card-spacing"
+  previewClassName="h-[36rem]"
+/>
+
+Use `-mx-(--card-spacing)` to let content run edge to edge. A block that steps up to `bg-field` reads as a layer inside the card. When it sits above a footer, put `-mb-(--card-spacing)` on `CardContent` to remove the gap.
+
+<ComponentPreview
+  styleName="base-nova"
+  name="card-edge-to-edge"
+  previewClassName="h-[26rem]"
+/>
+
+## Image
+
+An image before the header sits at the top edge, with the card's radius.
+
+<ComponentPreview
+  styleName="base-nova"
+  name="card-image"
+  previewClassName="h-[34rem]"
+/>
+
+## Design
+
+- **Surface.** `card` (the raised step) with radius 28. There is no ring and no shadow: depth comes from the brightness ladder alone.
+- **Layers.** What sits in a card steps up. `CardFooter` is a `field` strip with no border.
+- **Text.** The title is 16/22 at 500 with -0.02em. The description is 13/18 in the secondary colour.
+- **Nesting.** An inner block has the card's radius minus the space around it: 28 less 8 is 20.
+
+## API Reference
+
+| Part | Description |
+| --- | --- |
+| `Card` | The surface. `size` is `"default"` or `"sm"`. Set `--card-spacing` to change the spacing. |
+| `CardHeader` | A title, a description and an optional action. |
+| `CardTitle`, `CardDescription` | The two lines of the header. |
+| `CardAction` | Puts a button or a badge at the top right of the header. |
+| `CardContent` | The body. |
+| `CardFooter` | A `field` strip for actions at the bottom. |

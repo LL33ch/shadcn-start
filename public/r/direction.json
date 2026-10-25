@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "direction",
+  "title": "Direction",
+  "description": "A provider component that sets the text direction for your application.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+  ],
+  "files": [
+    {
+      "path": "components/ui/direction.tsx",
+      "content": "\"use client\"\n\nexport {\n  DirectionProvider,\n  useDirection,\n} from \"@base-ui/react/direction-provider\"\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

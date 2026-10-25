@@ -1,0 +1,143 @@
+---
+title: Button
+description: A pill that shrinks under a press. One primary action, quiet and destructive ones, and a busy state with the orb.
+base: base
+component: true
+links:
+  doc: https://base-ui.com/react/components/button
+  api: https://base-ui.com/react/components/button#api-reference
+---
+
+<ComponentPreview
+  name="button-demo"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies. The button has no state and no `use client`, so it renders on the server and `buttonVariants` can be called there.</Step>
+
+```bash
+npm install @base-ui/react class-variance-authority
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="button"
+  title="components/ui/button.tsx"
+/>
+
+<Step>Add the busy state's CSS (the `data-slot="button-orb"` rules and the `orb-*` keyframes) and the easings to your CSS file. They are in `app/globals.css`.</Step>
+
+<Step>Optional: mount `PressFootprint` once in the root layout (`components/press-footprint.tsx`, the only client part). A press shrinks the button, and a click let go near its edge is still a click.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { Button } from "@/components/ui/button"
+```
+
+```tsx showLineNumbers
+<Button>Add this device</Button>
+```
+
+## Variants
+
+`accent` is the one primary action on a screen: Add this device, Reconnect, Download. `tint` is a quiet primary, like a card's Connect. `soft` is for Cancel, Copy and Start over. `red` is for Remove. Use buttons and pills for actions: never blue text links.
+
+<ComponentPreview
+  name="button-variants"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+`default` is `accent`, `secondary` is `soft` and `destructive` is `red`, so code written for shadcn/ui keeps working. `outline` and `ghost` are quiet fills without a border; `link` is only for a link inside a sentence.
+
+## Sizes
+
+The default is 48px high, `sm` is 40px, `xs` is 32px (a pill beside a label, like Update) and `lg` is 56px.
+
+<ComponentPreview
+  name="button-sizes"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## Icon
+
+The round buttons are knobs: a 32px circle (`icon`) with a 16px icon. They scale to 0.8 under a press. `icon-lg` is 40px, `icon-sm` 28px and `icon-xs` 24px. Give them an `aria-label`.
+
+<ComponentPreview
+  name="button-icon"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## With icon
+
+An icon goes before or after the words; the padding on that side gets smaller.
+
+<ComponentPreview
+  name="button-with-icon"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## Loading
+
+Pass `loading` while the button waits for an answer. The button keeps its size, its content blurs away and the orb comes up through the blur in the button's own colour. The button stays focusable and ignores clicks meanwhile. It needs no client code: loading is a plain prop, so the button renders on the server too.
+
+<ComponentPreview
+  name="button-loading"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## Disabled
+
+<ComponentPreview
+  name="button-disabled"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## Full width
+
+<ComponentPreview
+  name="button-block"
+  previewClassName="h-auto min-h-[220px]"
+/>
+
+## As a link
+
+Use `render` to draw the button as another element, and set `nativeButton={false}` when it is not a `<button>`. `buttonVariants` gives the classes alone.
+
+<ComponentPreview
+  name="button-render"
+  previewClassName="h-auto min-h-[160px]"
+/>
+
+## Design
+
+- **Shape.** A pill: 48px high, 20px padding, an 18px icon, 16/22 text at 500 (600 on accent, tint and red) with -0.015em tracking. No ellipsis on a button: "Remove", never "Remove...".
+- **Press.** `scale(.95)` on 200ms ease-out (`--ease-out`). Knobs scale to 0.8 on 150ms.
+- **Hover.** accent goes to 82%, tint to 20% (24% pressed) and soft to +6% of the text colour (+10% while it holds an open menu). All on 200ms.
+- **Busy.** The content goes out in 180ms ease-in (`blur 5px`, `scale .86`). The orb comes in 70ms later over 340ms ease-out and is not drawn at all (its loop is stopped) while the button is not waiting. It is Orbs B4 Converge from aicss.dev: one dot walks a triangle and a second breathes in the middle, 1.8s loops.
+- **Focus.** A 2px accent ring at 65%, 2px outside the pill, only while the keyboard moves focus.
+- **Reduced motion.** Transitions shorten and the orb loop stops moving.
+
+## API Reference
+
+| Prop | Description |
+| --- | --- |
+| `variant` | `"accent"` (or `"default"`), `"tint"`, `"soft"` (`"secondary"`), `"red"` (`"destructive"`), `"outline"`, `"ghost"`, `"link"`. |
+| `size` | `"default"`, `"sm"`, `"xs"`, `"lg"`, `"icon"`, `"icon-lg"`, `"icon-sm"`, `"icon-xs"`. |
+| `loading` | Waiting for an answer. Shows the orb and ignores clicks. Leave it out for a plain button. |
+| `render`, `nativeButton` | Draw the button as another element. See [Base UI](https://base-ui.com/react/components/button#api-reference). |

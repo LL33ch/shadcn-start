@@ -1,0 +1,120 @@
+---
+title: Alert
+description: One message that says what stops or changes things. A glass icon, a title and a line that adds to it.
+base: base
+component: true
+---
+
+<ComponentPreview
+  name="alert-demo"
+  previewClassName="h-auto min-h-[220px]"
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="alert"
+  title="components/ui/alert.tsx"
+/>
+
+<Step>The notice blurs in on a `notice-in` keyframe. Add it to your CSS file (see `app/globals.css`).</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  Alert,
+  AlertAction,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
+} from "@/components/ui/alert"
+```
+
+```tsx showLineNumbers
+<Alert variant="bad">
+  <AlertIcon>
+    <GlassIcon name="chart" tone="red" className="size-9" />
+  </AlertIcon>
+  <AlertTitle>Out of data</AlertTitle>
+  <AlertDescription>
+    Nothing gets through until the limit resets.
+  </AlertDescription>
+</Alert>
+```
+
+## Composition
+
+```text
+Alert
+├── AlertIcon          (a glass icon, 36px)
+├── AlertTitle
+├── AlertDescription
+└── AlertAction        (a button, centred against both lines)
+```
+
+## Tones
+
+The tone is a state, never decoration. `ok` says things are fine, `warn` asks for attention, `bad` marks an end. The default is a quiet card.
+
+<ComponentPreview
+  name="alert-tones"
+  previewClassName="h-auto min-h-[420px]"
+/>
+
+## Line icon
+
+A line icon placed directly in the `Alert` takes the tone's colour and is centred against both lines. Prefer a glass icon in `AlertIcon` for notices the person has to act on.
+
+<ComponentPreview
+  name="alert-line-icon"
+  previewClassName="h-auto min-h-[260px]"
+/>
+
+## Action
+
+Use `AlertAction` to put a button beside the text. It uses the `soft` button; the tone stays on the notice.
+
+<ComponentPreview
+  name="alert-action"
+  previewClassName="h-auto min-h-[220px]"
+/>
+
+## Title only
+
+<ComponentPreview
+  name="alert-title-only"
+  previewClassName="h-auto min-h-[160px]"
+/>
+
+## Design
+
+- **Shape.** Radius 24, padding `14 18 14 14`, gap 14. The title is 15/22 at 500, the line under it 14/20 in the secondary text colour. The line adds to the title and never repeats it.
+- **Tone.** A tint of the card (10%) and a 1px inset ring of the same colour (22%). No border and no shadow.
+- **Placement.** One notice per page, above the columns and 22px above them. Say a state once, where it matters.
+- **Motion.** A notice that comes blurs in on the soft spring (`notice-in`). Reduced motion drops the travel.
+- **Role.** The notice has `role="alert"`, so a screen reader announces it when it appears.
+
+## API Reference
+
+| Part | Prop | Description |
+| --- | --- | --- |
+| `Alert` | `variant` | `"default"`, `"ok"`, `"warn"` or `"bad"`. `"destructive"` is the same as `"bad"`. |
+| `AlertIcon` | `className` | A 36px box for the icon. A glass icon takes `size-9`; a line icon is drawn at 18px. |
+| `AlertTitle` | `className` | The title. |
+| `AlertDescription` | `className` | The line under the title. |
+| `AlertAction` | `className` | An action placed at the end of the notice. |

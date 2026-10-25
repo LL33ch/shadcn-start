@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip",
+  "title": "Tooltip",
+  "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "https://raw.githubusercontent.com/LL33ch/shadcn-start/main/public/r/theme.json"
+  ],
+  "files": [
+    {
+      "path": "components/ui/tooltip.tsx",
+      "content": "import { Tooltip as TooltipPrimitive } from \"@base-ui/react/tooltip\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\n/*\r\n  Tooltip. One 26px pill in toast colours\r\n  (`knob` on dark, inverted on light), 12px at 500, padding 0 10, with the pop shadow and a\r\n  hairline. It shows after 420ms of hover; moving on to the next trigger it is there at once.\r\n  It comes in on SOFT (`scale .9, blur 3`) and fades in 120ms. A Kbd inside takes the pill's\r\n  colours. The motion lives in app/globals.css.\r\n\r\n  No state and no effects: it renders on the server.\r\n*/\r\n\r\nfunction TooltipProvider({\r\n  delay = 420,\r\n  ...props\r\n}: TooltipPrimitive.Provider.Props) {\r\n  return (\r\n    <TooltipPrimitive.Provider\r\n      data-slot=\"tooltip-provider\"\r\n      delay={delay}\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nfunction Tooltip({ ...props }: TooltipPrimitive.Root.Props) {\r\n  return <TooltipPrimitive.Root data-slot=\"tooltip\" {...props} />\r\n}\r\n\r\nfunction TooltipTrigger({ ...props }: TooltipPrimitive.Trigger.Props) {\r\n  return <TooltipPrimitive.Trigger data-slot=\"tooltip-trigger\" {...props} />\r\n}\r\n\r\nfunction TooltipContent({\r\n  className,\r\n  side = \"top\",\r\n  sideOffset = 6,\r\n  align = \"center\",\r\n  alignOffset = 0,\r\n  collisionPadding = 12,\r\n  children,\r\n  ...props\r\n}: TooltipPrimitive.Popup.Props &\r\n  Pick<\r\n    TooltipPrimitive.Positioner.Props,\r\n    \"align\" | \"alignOffset\" | \"side\" | \"sideOffset\" | \"collisionPadding\"\r\n  >) {\r\n  return (\r\n    <TooltipPrimitive.Portal>\r\n      <TooltipPrimitive.Positioner\r\n        align={align}\r\n        alignOffset={alignOffset}\r\n        side={side}\r\n        sideOffset={sideOffset}\r\n        collisionPadding={collisionPadding}\r\n        className=\"isolate z-80\"\r\n      >\r\n        <TooltipPrimitive.Popup\r\n          data-slot=\"tooltip-content\"\r\n          className={cn(\r\n            \"inline-flex h-[26px] w-fit max-w-xs origin-(--transform-origin) items-center gap-1.5 rounded-full bg-(--toast) px-2.5 text-xs font-medium tracking-[-0.1px] whitespace-nowrap text-(--toast-fg) shadow-[var(--pop-shadow),0_0_0_1px_var(--line)] has-data-[slot=kbd]:pr-1 **:data-[slot=kbd]:h-[18px] **:data-[slot=kbd]:min-w-[18px] **:data-[slot=kbd]:rounded-full **:data-[slot=kbd]:bg-[color-mix(in_srgb,var(--toast-fg)_14%,transparent)] **:data-[slot=kbd]:px-1.5 **:data-[slot=kbd]:text-(--toast-fg) **:data-[slot=kbd]:shadow-none\",\r\n            className\r\n          )}\r\n          {...props}\r\n        >\r\n          {children}\r\n        </TooltipPrimitive.Popup>\r\n      </TooltipPrimitive.Positioner>\r\n    </TooltipPrimitive.Portal>\r\n  )\r\n}\r\n\r\nexport { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }\r\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

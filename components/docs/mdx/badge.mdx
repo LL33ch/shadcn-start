@@ -1,0 +1,127 @@
+---
+title: Badge
+description: A small pill that names a state, and a tile for a store or an action.
+base: base
+component: true
+links:
+  doc: https://base-ui.com/react/components/use-render
+  api: https://base-ui.com/react/components/use-render#api-reference
+---
+
+<ComponentPreview
+  name="badge-demo"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies. The badge has no state and no ``use client``, so it renders on the server.</Step>
+
+```bash
+npm install @base-ui/react class-variance-authority
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="badge"
+  title="components/ui/badge.tsx"
+/>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { Badge } from "@/components/ui/badge"
+```
+
+```tsx showLineNumbers
+<Badge variant="ok">Connected</Badge>
+```
+
+## Variants
+
+The tone is state, never decoration. `default` (the accent) is the plain one, like the Demo chip. `ok` means fine, `warn` needs attention and `bad` is an end. Each is a tint of its colour with the colour as text, and none has a border. `soft` is for a count or a quiet label.
+
+<ComponentPreview
+  name="badge-variants"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+`tint` is the same as `default`, `secondary` is `soft` and `destructive` is `bad`, so code written for shadcn/ui keeps working.
+
+## Sizes
+
+The default is 26px high with 13px text. `sm` is 20px with 11.5px text, for a count beside a word.
+
+<ComponentPreview
+  name="badge-sizes"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## With icon
+
+Mark the icon with `data-icon="inline-start"` or `"inline-end"`. The padding on that side gets smaller.
+
+<ComponentPreview
+  name="badge-icon"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## With spinner
+
+<ComponentPreview
+  name="badge-spinner"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## Link and button
+
+Use `render` to draw the badge as a link or a button. It then presses to 0.95 and its tint deepens on hover: accent 13% to 20%, warn and ok 14% to 22%. This is how the Update pill works.
+
+<ComponentPreview
+  name="badge-link"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## Badge tile
+
+The larger badge is a tile: 60px high with an inverted 36px icon tile, a small line over a main line, and a trailing mark (a chevron for an action, an open mark for a page in a new tab). `primary` on the icon tints it with the accent: use it for the one thing to tap in a step. The tile takes the sheet's `inset` step when it sits inside an inset row.
+
+<ComponentPreview
+  name="badge-tile"
+  previewClassName="h-auto min-h-[260px]"
+/>
+
+Two tiles can sit side by side without the trailing mark: a 32px icon tile and 10px padding.
+
+<ComponentPreview
+  name="badge-tiles"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## Design
+
+- **Chip.** A pill, 26px high, padding 12px, gap 6px, 13px at 600. The fill is the tone at 13 or 14% over the surface and the text is the tone itself. Nothing is drawn around it.
+- **Interactive.** `render` makes it a link or a button: `scale(.95)` on 200ms ease-out and a deeper tint on hover. Focus is a 2px accent ring at 65%, 2px outside the pill.
+- **Tile.** `field`, radius 18, padding `0 14 0 12`, gap 12. The icon tile is radius 10, `text` fill with a `raised` mark. Hover goes one step up to `knob` and a press takes it to 0.98.
+
+## API Reference
+
+| Part | Description |
+| --- | --- |
+| `Badge` | The chip. `variant` is `"default"`, `"ok"`, `"warn"`, `"bad"`, `"soft"`, `"outline"`, `"ghost"` or `"link"`; `size` is `"default"` or `"sm"`. `render` draws it as another element. |
+| `BadgeTile` | The tile. `inset` steps its fill up inside an inset row. `render` draws it as a link or a button. |
+| `BadgeTileIcon` | The 36px icon tile. `primary` tints it with the accent. |
+| `BadgeTileText`, `BadgeTileLabel` | The two lines: the small label first, then the main line as text. |

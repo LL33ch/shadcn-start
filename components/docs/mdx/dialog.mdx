@@ -1,0 +1,160 @@
+---
+title: Dialog
+description: A sheet over the page. A drawer rising from the bottom on a phone, a dialog popping up from its centre on a computer.
+featured: true
+base: base
+component: true
+links:
+  doc: https://base-ui.com/react/components/dialog
+  api: https://base-ui.com/react/components/dialog#api-reference
+---
+
+<ComponentPreview
+  name="dialog-demo"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies. The dialog has no state and no ``use client``, so it renders on the server.</Step>
+
+```bash
+npm install @base-ui/react lucide-react
+```
+
+<Step>Copy and paste the following code into your project. It uses the [Button](/docs/button).</Step>
+
+<ComponentSource
+  name="dialog"
+  title="components/ui/dialog.tsx"
+/>
+
+<Step>Add the `--scrim` and `--sheet-shadow` tokens and the `dialog-overlay` / `dialog-content` motion rules to your CSS file. They are in `app/globals.css`.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+```
+
+```tsx showLineNumbers
+<Dialog>
+  <DialogTrigger>Open</DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Remove this device?</DialogTitle>
+      <DialogDescription>
+        The router will forget its key.
+      </DialogDescription>
+    </DialogHeader>
+    <DialogFooter>
+      <DialogClose>Cancel</DialogClose>
+      <Button variant="red">Remove</Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+```
+
+## Composition
+
+Use the following composition to build a `Dialog`:
+
+```text
+Dialog
+├── DialogTrigger
+└── DialogContent
+    ├── DialogHeader
+    │   ├── DialogTitle
+    │   └── DialogDescription
+    ├── (your content)
+    └── DialogFooter
+```
+
+## A question
+
+The sheet asks in the way iOS does: the title and a short paragraph on the left, then two equal buttons. **Cancel** is `soft` and the action is `accent` (or `red` for a removal). There is no × beside them, so leave `showCloseButton` on only when the dialog has more than a choice.
+
+<ComponentPreview
+  name="dialog-no-close-button"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## Form
+
+Fields sit between the header and the footer. The footer buttons share the width.
+
+<ComponentPreview
+  name="dialog-form"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## With a close button
+
+`showCloseButton` is on by default: a 32px round knob pinned at the top right, 22px from the edges. The header makes room for it.
+
+<ComponentPreview
+  name="dialog-share"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## Sticky footer
+
+Keep the actions in view while the content scrolls.
+
+<ComponentPreview
+  name="dialog-sticky-footer"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## Scrollable content
+
+Long content scrolls inside the sheet. The sheet never grows past the screen: it stops 16px from the edges.
+
+<ComponentPreview
+  name="dialog-scrollable-content"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## Design
+
+- **Shape.** The `raised` surface (`card`) with a 36px radius, 24px padding and the sheet shadow. No border and no ring.
+- **Title.** 20/28 at 500 with -0.5px tracking. The description is 14/20 in the secondary text colour.
+- **Phone (below 760px).** A drawer floating 16px off the left, right and bottom edges (safe areas included), at most 400px wide. It rises 500ms on the drawer curve (`cubic-bezier(.32,.72,0,1)`) and leaves in 420ms. The scrim fades in 420ms and out in 320ms.
+- **Computer (760px and up).** Centred by layout, with inset and auto margins, so the text stays on the pixel grid. It pops up from its centre: `scale .9 → 1` and `blur 4px → 0` on the soft spring in 476ms. It leaves in 120ms ease-in to `scale .96` and `blur 3px`.
+- **Scrim.** 80% black in dark, 62% light in light. It only dims: nothing is blurred behind the sheet.
+- **Closes by** ×, the scrim or Escape.
+- **Reduced motion.** Travel and scale drop out and the fades shorten.
+
+## API Reference
+
+| Part | Description |
+| --- | --- |
+| `Dialog` | The root. Controlled with `open` and `onOpenChange`, or `defaultOpen`. |
+| `DialogTrigger` | Opens the dialog. Draw it as another element with `render`. |
+| `DialogContent` | The sheet and its scrim. `showCloseButton` (default `true`) shows the round ×. |
+| `DialogHeader`, `DialogTitle`, `DialogDescription` | The head. The title names the dialog for screen readers. |
+| `DialogFooter` | A row of equal buttons. `showCloseButton` adds a soft Close button before the others. |
+| `DialogClose` | Closes the dialog. Draw it as a `Button` with `render`. |
+
+See the [Base UI](https://base-ui.com/react/components/dialog#api-reference) documentation for the rest.

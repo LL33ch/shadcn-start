@@ -13,6 +13,21 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  // Code copied from the shadcn/ui docs and registry: kept as published.
+  {
+    files: [
+      "components/docs/examples/**",
+      "components/ui/**",
+      "components/preview-02/**",
+      "hooks/use-mobile.ts",
+    ],
+    rules: {
+      "react-hooks/refs": "off",
+      "react-hooks/set-state-in-effect": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "@next/next/no-img-element": "off",
+    },
+  },
 ]);
 
 export default eslintConfig;

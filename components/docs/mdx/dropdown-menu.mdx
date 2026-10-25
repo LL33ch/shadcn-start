@@ -1,0 +1,188 @@
+---
+title: Dropdown Menu
+description: A liquid-glass menu that grows out of its button. Rows with icons, a line under the label, groups, checks and submenus.
+featured: true
+base: base
+component: true
+links:
+  doc: https://base-ui.com/react/components/menu
+  api: https://base-ui.com/react/components/menu#api-reference
+---
+
+<ComponentPreview
+  name="dropdown-menu-demo"
+  previewClassName="h-auto min-h-[380px]"
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies. The menu has no state and no ``use client``, so it renders on the server.</Step>
+
+```bash
+npm install @base-ui/react lucide-react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="dropdown-menu"
+  title="components/ui/dropdown-menu.tsx"
+/>
+
+<Step>Add the `--glass-*` tokens, the springs and the `dropdown-menu-*` motion rules to your CSS file. They are in `app/globals.css`.</Step>
+
+<Step>Optional: mount `MenuGlide` once in the root layout (`components/menu-glide.tsx`, a client helper). It glides the highlight from row to row. Without it each row lights up on its own and everything else works the same.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+```
+
+```tsx showLineNumbers
+<DropdownMenu>
+  <DropdownMenuTrigger render={<Button variant="soft" />}>
+    Open
+  </DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuGroup>
+      <DropdownMenuLabel>My account</DropdownMenuLabel>
+      <DropdownMenuItem>Profile</DropdownMenuItem>
+      <DropdownMenuItem>Billing</DropdownMenuItem>
+    </DropdownMenuGroup>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem variant="destructive">Log out</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+```
+
+## Composition
+
+Use the following composition to build a `DropdownMenu`:
+
+```text
+DropdownMenu
+├── DropdownMenuTrigger
+└── DropdownMenuContent
+    ├── DropdownMenuGroup
+    │   ├── DropdownMenuLabel
+    │   ├── DropdownMenuItem
+    │   │   └── DropdownMenuText
+    │   │       └── DropdownMenuDescription
+    │   └── DropdownMenuItem
+    ├── DropdownMenuSeparator
+    ├── DropdownMenuCheckboxItem
+    ├── DropdownMenuRadioGroup
+    │   └── DropdownMenuRadioItem
+    └── DropdownMenuSub
+        ├── DropdownMenuSubTrigger
+        └── DropdownMenuSubContent
+```
+
+## Basic
+
+A menu with a label, a separator and a disabled row.
+
+<ComponentPreview
+  name="dropdown-menu-basic"
+  previewClassName="h-auto min-h-[300px]"
+/>
+
+## Icons
+
+An icon goes before the words. It is 16px, 14px in from the rounded edge, and grows to 1.08 under the highlight.
+
+<ComponentPreview
+  name="dropdown-menu-icons"
+  previewClassName="h-auto min-h-[280px]"
+/>
+
+## A line under the label
+
+Wrap the label and `DropdownMenuDescription` in `DropdownMenuText`. The row grows from 34px to 50px. The line is 11.5px with tabular figures, good for an address.
+
+<ComponentPreview
+  name="dropdown-menu-description"
+  previewClassName="h-auto min-h-[280px]"
+/>
+
+## Variants
+
+`warn` is for an action with a cost, like Reconnect. `destructive` is for one that cannot be undone, like Remove. The highlight is the same for both: only the text changes colour. See the demo at the top.
+
+## Shortcuts
+
+<ComponentPreview
+  name="dropdown-menu-shortcuts"
+  previewClassName="h-auto min-h-[280px]"
+/>
+
+## Submenu
+
+<ComponentPreview
+  name="dropdown-menu-submenu"
+  previewClassName="h-auto min-h-[280px]"
+/>
+
+## Checkboxes
+
+<ComponentPreview
+  name="dropdown-menu-checkboxes"
+  previewClassName="h-auto min-h-[260px]"
+/>
+
+## Radio group
+
+<ComponentPreview
+  name="dropdown-menu-radio-group"
+  previewClassName="h-auto min-h-[260px]"
+/>
+
+## Design
+
+- **Glass.** Apple's iOS 26 Liquid Glass (Regular): on dark black 40% with a white 4% film, on light `rgba(245,245,245,.6)`. Backdrop `blur 28px`, `saturate 1.8`, and a soft inner 1px edge (`--glass-edge`). Dark has no shadow, light has a soft one. Nothing dims around it.
+- **Shape.** At least 210px wide, radius 24, padding 6. Rows are 34px high, radius 18 (concentric with the glass), 14px in at the left and 12px at the right. The label is 14/18 at 400.
+- **Separators.** 13px high with a 1px line 16px in from the edges.
+- **Placement.** Centred on its button, 8px away, under it where it fits and over it where it does not, and 12px inside the screen's edge.
+- **Open.** Grows out of its button: `scale .5 → 1` and `blur 6px → 0` on the soft spring (476ms, about 4% over), from the side it hangs off.
+- **Close.** Goes back towards the button in 110ms ease-in to `scale .7` and `blur 4px`: quicker than it came.
+- **Highlight.** One for all the rows, under their icons and words, the same solid for every row. It fades in (160ms, ease-out) where the pointer or the keyboard is and glides from row to row on the glide spring (about 2% over): place, size and corners. A press takes it to 0.97 with its row, and it fades where the pointer leaves the rows. Back on a row while it still fades, it turns back and glides from where it stands. The icon under it grows to 1.08.
+- **Closes by** a press outside, the trigger again, Escape or a choice.
+
+The glide is moved by `MenuGlide`, a small client component that listens on the document, so the menu itself stays a server component. The menu holds one empty `<span data-slot="dropdown-menu-highlight">` for it. Without `MenuGlide` the row under the pointer lights up by itself.
+
+## API Reference
+
+| Part | Description |
+| --- | --- |
+| `DropdownMenu` | The root. Controlled with `open` and `onOpenChange`, or `defaultOpen`. |
+| `DropdownMenuTrigger` | Opens the menu. Draw it as a `Button` with `render`. |
+| `DropdownMenuContent` | The glass. `side`, `align` (default `center`), `sideOffset` (8) and `collisionPadding` (12). |
+| `DropdownMenuItem` | A row. `variant` is `"default"`, `"warn"` or `"destructive"`. |
+| `DropdownMenuText`, `DropdownMenuDescription` | A label with a line under it. |
+| `DropdownMenuCheckboxItem`, `DropdownMenuRadioItem` | A row with a check on the right. |
+| `DropdownMenuSub`, `DropdownMenuSubTrigger`, `DropdownMenuSubContent` | A submenu. |
+| `DropdownMenuLabel`, `DropdownMenuSeparator`, `DropdownMenuShortcut` | Caption, divider and key hint. |
+
+See the [Base UI](https://base-ui.com/react/components/menu#api-reference) documentation for the rest.

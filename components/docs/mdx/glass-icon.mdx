@@ -1,0 +1,115 @@
+---
+title: Glass Icon
+description: Any Lucide icon on a piece of frosted glass. The kit's only illustration.
+base: base
+component: true
+---
+
+<ComponentPreview
+  name="glass-icon-demo"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies. The glass icon has no state and no ``use client``, so it renders on the server.</Step>
+
+```bash
+npm install lucide-react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="glass-icon"
+  title="components/ui/glass-icon.tsx"
+/>
+
+<Step>Add the `--t-*` and `--gi-*` tokens and the `.gi` rules to your CSS file. They are in `app/globals.css`.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { TruckIcon } from "lucide-react"
+
+import { GlassIcon } from "@/components/ui/glass-icon"
+```
+
+```tsx showLineNumbers
+<GlassIcon icon={TruckIcon} tone="blue" className="size-14" />
+```
+
+## Any Lucide icon
+
+Pass the icon component itself, not an element, to `icon`. Every icon in [Lucide](https://lucide.dev/icons) works: the glass is the same, and the icon is drawn on it as a white detail line.
+
+```tsx
+import { BellIcon } from "lucide-react"
+
+<GlassIcon icon={BellIcon} tone="orange" />
+```
+
+The icon sits on a frosted square with a tinted circle behind it. Its line keeps the same weight whatever the size of the glass.
+
+## Tones
+
+The tone is state, as everywhere in the kit. `grey` is the neutral one, `blue` is the accent or a plain choice, `green` is fine, `orange` needs attention and `red` is an end or a removal.
+
+<ComponentPreview
+  name="glass-icon-tones"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## Size
+
+The size is set with the CSS size utilities, so the glass scales without blurring. Good sizes are 22 and 24 in rows, 32 on cards, 36 in notices, 44 and 56 on empty states and 64 in questions.
+
+<ComponentPreview
+  name="glass-icon-sizes"
+  previewClassName="h-auto min-h-[200px]"
+/>
+
+## In other components
+
+A glass icon goes where a notice, a row or a question needs a mark: the media of an [Alert](/docs/alert), an [Alert Dialog](/docs/alert-dialog) or an Item.
+
+<ComponentPreview
+  name="glass-icon-usage"
+  previewClassName="h-auto min-h-[300px]"
+/>
+
+## Drawn shapes
+
+The built-in icons have a back shape and a pane drawn for each, so the pane follows the object: a phone, a router, a shield. Use them with `name` when the object is one of these.
+
+<ComponentPreview
+  name="glass-icon-names"
+  previewClassName="h-auto min-h-[260px]"
+/>
+
+## Design
+
+- **Glass.** A tinted back shape, the same shape blurred behind a frosted pane, a thin rim and a white detail. The colours are the `--t-*` and `--gi-*` tokens, so they change with the theme.
+- **Lucide.** The pane is the `other` shape, a 14 unit square with a radius of 3.6 and a circle behind its top right corner. The icon is 9 units wide in the middle of the pane, with a stroke of 4 on the 24 unit grid, which is 1.5 at the size drawn.
+- **Hidden from readers.** The icon is decoration (`aria-hidden`). Put the meaning in the text beside it.
+
+## API Reference
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `icon` | `LucideIcon`. Any Lucide icon. Use either `icon` or `name`. | - |
+| `name` | One of the drawn shapes: `phone`, `mobile`, `tablet`, `computer`, `router`, `other`, `plus`, `globe`, `home`, `shield`, `chart`, `calendar`, `clock`, `lock`, `check`, `trash`, `refresh`. | - |
+| `tone` | `"grey" \| "blue" \| "green" \| "orange" \| "red"` | `"grey"` |
+| `className` | Use `size-*` for the size. | - |

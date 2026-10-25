@@ -1,0 +1,138 @@
+---
+title: Accordion
+description: Rows that fold and unfold. They touch while closed; an open row lifts out on a spring.
+base: base
+component: true
+links:
+  doc: https://base-ui.com/react/components/accordion
+  api: https://base-ui.com/react/components/accordion#api-reference
+---
+
+<ComponentPreview
+  name="accordion-demo"
+  align="start"
+  previewClassName="*:data-[slot=accordion]:max-w-sm h-[360px]"
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @base-ui/react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="accordion"
+  title="components/ui/accordion.tsx"
+/>
+
+<Step>The springs come from CSS variables. Add them to your CSS file (see `--spring-bouncy` and `--spring-soft` in `app/globals.css`).</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+```
+
+```tsx showLineNumbers
+<Accordion defaultValue={["item-1"]}>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Is it accessible?</AccordionTrigger>
+    <AccordionContent>
+      Yes. It adheres to the WAI-ARIA design pattern.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+## Composition
+
+```text
+Accordion
+├── AccordionItem
+│   ├── AccordionTrigger   (icon, meta)
+│   └── AccordionContent
+└── AccordionItem
+    ├── AccordionTrigger
+    └── AccordionContent
+```
+
+## Icon and value
+
+Give `AccordionTrigger` an `icon` (a glass icon, 22px) and a `meta` value. The content indents to the title, and the value gives way to the content while the row is open, so each fact is shown once.
+
+<ComponentPreview
+  name="accordion-icons"
+  align="start"
+  previewClassName="*:data-[slot=accordion]:max-w-md h-[400px]"
+/>
+
+## Inset
+
+Inside a card or a sheet use `variant="inset"`: the rows step up one level to `field`, as every block inside `card` does.
+
+<ComponentPreview
+  name="accordion-inset"
+  align="start"
+  previewClassName="h-[380px]"
+/>
+
+## Multiple
+
+Use the `multiple` prop to let several rows stay open.
+
+<ComponentPreview
+  name="accordion-multiple"
+  align="start"
+  previewClassName="*:data-[slot=accordion]:max-w-sm h-[480px]"
+/>
+
+## Disabled
+
+Use `disabled` on `AccordionItem`. The row is dimmed and has no hover.
+
+<ComponentPreview
+  name="accordion-disabled"
+  align="start"
+  previewClassName="*:data-[slot=accordion]:max-w-sm h-[320px]"
+/>
+
+## Design
+
+- **Shape.** Closed rows share rounded ends: only the first row's top and the last row's bottom are round, and so are the corners facing an open row. An open row lifts out with 10px gaps and a 20px radius on all four corners.
+- **Depth.** No borders. The rows are `card` on the page and `field` inside a card (`variant="inset"`). Hover steps the row towards `knob`.
+- **Motion.** Height, margins and radii run on the bouncy spring (`--spring-bouncy`, about 11% overshoot). The chevron turns on the soft spring (`--spring-soft`). The head value blurs out and slides 8px right. Reduced motion shortens every transition.
+- **Keyboard.** Arrow keys, Home and End move between triggers, Enter and Space toggle a row.
+
+## API Reference
+
+| Part | Prop | Description |
+| --- | --- | --- |
+| `Accordion` | `variant` | `"default"` (on the page) or `"inset"` (inside a card). |
+| `Accordion` | `multiple` | Let several rows stay open. Default `false`. |
+| `Accordion` | `value`, `defaultValue`, `onValueChange` | The open rows, as an array of item values. |
+| `AccordionItem` | `value`, `disabled` | The row's value, and whether it ignores interaction. |
+| `AccordionTrigger` | `icon` | A leading icon. The content indents to the title. |
+| `AccordionTrigger` | `meta` | A value at the end of the row, hidden while the row is open. |
+
+The rest follows [Base UI](https://base-ui.com/react/components/accordion#api-reference).

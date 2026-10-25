@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "press-footprint",
+  "files": [
+    {
+      "path": "components/press-footprint.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\n\r\nconst PRESSABLE = 'button, a[href], [role=\"button\"], label'\r\n\r\n/**\r\n * A control pressed scales down. Let go near its edge after a moment and the pointer is outside\r\n * it by then, so the browser would drop the click. What was pressed keeps the footprint it had\r\n * when pressed: let go inside that and it gets the click. Mouse and trackpad only: a touch stays\r\n * with what it pressed.\r\n */\r\nexport function PressFootprint() {\r\n  React.useEffect(() => {\r\n    let pressed: { el: HTMLElement; at: DOMRect } | null = null\r\n    // The browser's own click of this press, to the ancestor, is to be dropped.\r\n    let swallow = false\r\n\r\n    const down = (e: PointerEvent) => {\r\n      const el =\r\n        e.pointerType === \"mouse\" && e.button === 0\r\n          ? (e.target as Element).closest?.<HTMLElement>(PRESSABLE)\r\n          : null\r\n      pressed = el ? { el, at: el.getBoundingClientRect() } : null\r\n    }\r\n    const up = (e: PointerEvent) => {\r\n      const p = pressed\r\n      pressed = null\r\n      if (!p || p.el.contains(e.target as Node)) return\r\n      const { at } = p\r\n      if (\r\n        e.clientX < at.left ||\r\n        e.clientX > at.right ||\r\n        e.clientY < at.top ||\r\n        e.clientY > at.bottom\r\n      )\r\n        return\r\n      swallow = true\r\n      // The click, if the browser sends one, comes right after this; anything later is another press.\r\n      setTimeout(() => (swallow = false))\r\n      p.el.click()\r\n    }\r\n    const click = (e: MouseEvent) => {\r\n      if (!swallow || !e.isTrusted) return\r\n      swallow = false\r\n      e.stopPropagation()\r\n      e.preventDefault()\r\n    }\r\n\r\n    document.addEventListener(\"pointerdown\", down, true)\r\n    document.addEventListener(\"pointerup\", up, true)\r\n    document.addEventListener(\"click\", click, true)\r\n    return () => {\r\n      document.removeEventListener(\"pointerdown\", down, true)\r\n      document.removeEventListener(\"pointerup\", up, true)\r\n      document.removeEventListener(\"click\", click, true)\r\n    }\r\n  }, [])\r\n\r\n  return null\r\n}\r\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}
