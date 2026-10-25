@@ -59,7 +59,7 @@ function DialogContent({
         data-slot="dialog-content"
         data-closable={showCloseButton ? "" : undefined}
         className={cn(
-          "group/dialog fixed inset-x-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 mx-auto grid h-fit max-h-[calc(100dvh-2rem)] max-w-[400px] gap-5 overflow-y-auto rounded-[36px] bg-card p-6 text-sm text-card-foreground shadow-sheet outline-none min-[760px]:top-4 min-[760px]:bottom-4 min-[760px]:my-auto",
+          "group/dialog fixed inset-x-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 mx-auto grid h-fit max-h-[calc(100dvh-2rem)] max-w-[400px] gap-5 overflow-y-auto rounded-[calc(36px*var(--radius-factor,1))] bg-card p-6 text-sm text-card-foreground outline-none min-[760px]:top-4 min-[760px]:bottom-4 min-[760px]:my-auto",
           className
         )}
         {...props}
@@ -72,7 +72,7 @@ function DialogContent({
               <Button
                 variant="soft"
                 size="icon"
-                className="absolute top-[22px] right-[22px]"
+                className="absolute top-5.5 right-5.5"
               />
             }
           >

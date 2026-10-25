@@ -128,7 +128,7 @@ function ComboboxContent({
           data-slot="combobox-content"
           data-chips={!!anchor}
           className={cn(
-            "group/combobox-content relative max-h-(--available-height) w-(--anchor-width) max-w-(--available-width) min-w-[calc(var(--anchor-width)+28px)] origin-(--transform-origin) overflow-hidden rounded-[24px] text-(--glass-text) shadow-[inset_0_0_0_1px_var(--glass-edge),var(--glass-shadow)] backdrop-blur-[28px] backdrop-saturate-[1.8] outline-none [background:var(--glass-bg)] data-[chips=true]:min-w-(--anchor-width) *:data-[slot=input-group]:m-1.5 *:data-[slot=input-group]:mb-0 *:data-[slot=input-group]:h-10 *:data-[slot=input-group]:w-auto *:data-[slot=input-group]:rounded-[18px] *:data-[slot=input-group]:bg-[color-mix(in_srgb,var(--glass-text)_6%,transparent)] *:data-[slot=input-group]:[&_input]:text-[15px]",
+            "group/combobox-content relative max-h-(--available-height) w-(--anchor-width) max-w-(--available-width) min-w-[calc(var(--anchor-width)+28px)] origin-(--transform-origin) overflow-hidden rounded-[calc(24px*var(--radius-factor,1))] text-(--glass-text) shadow-[inset_0_0_0_1px_var(--glass-edge),var(--glass-shadow)] backdrop-blur-[28px] backdrop-saturate-[1.8] outline-none [background:var(--glass-bg)] data-[chips=true]:min-w-(--anchor-width) *:data-[slot=input-group]:m-1.5 *:data-[slot=input-group]:mb-0 *:data-[slot=input-group]:h-10 *:data-[slot=input-group]:w-auto *:data-[slot=input-group]:rounded-[calc(18px*var(--radius-factor,1))] *:data-[slot=input-group]:bg-[color-mix(in_srgb,var(--glass-text)_6%,transparent)] *:data-[slot=input-group]:[&_input]:text-[15px]",
             className
           )}
           {...props}
@@ -160,7 +160,7 @@ function ComboboxItem({
     <ComboboxPrimitive.Item
       data-slot="combobox-item"
       className={cn(
-        "relative flex min-h-[34px] w-full cursor-default items-center gap-2.5 rounded-[18px] py-2 pr-10 pl-3.5 text-[14px]/[18px] tracking-[-0.2px] text-(--glass-text) outline-hidden transition-[background-color,scale] duration-160 ease-(--ease-out) select-none active:scale-[0.97] data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "relative flex min-h-8.5 w-full cursor-default items-center gap-2.5 rounded-[calc(18px*var(--radius-factor,1))] py-2 pr-10 pl-3.5 text-[14px]/[18px] tracking-[-0.2px] text-(--glass-text) outline-hidden transition-[background-color,scale] duration-160 ease-(--ease-out) select-none active:scale-[0.97] data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}
@@ -244,7 +244,7 @@ function ComboboxChips({
     <ComboboxPrimitive.Chips
       data-slot="combobox-chips"
       className={cn(
-        "flex min-h-12 flex-wrap items-center gap-1.5 rounded-[16px] bg-field p-2 shadow-[inset_0_0_0_1.5px_transparent] transition-shadow duration-300 ease-(--ease-out) has-disabled:opacity-50 has-aria-invalid:shadow-[inset_0_0_0_1.5px_var(--destructive)] has-[[data-slot=combobox-chip-input]:focus-visible]:shadow-[inset_0_0_0_1.5px_color-mix(in_srgb,var(--foreground)_16%,transparent)]",
+        "flex min-h-12 flex-wrap items-center gap-1.5 rounded-[calc(16px*var(--radius-factor,1))] bg-field p-2 shadow-[inset_0_0_0_1.5px_transparent] transition-shadow duration-300 ease-(--ease-out) has-disabled:opacity-50 has-aria-invalid:shadow-[inset_0_0_0_1.5px_var(--destructive)] has-[[data-slot=combobox-chip-input]:focus-visible]:shadow-[inset_0_0_0_1.5px_color-mix(in_srgb,var(--foreground)_16%,transparent)]",
         className
       )}
       {...props}
@@ -264,7 +264,7 @@ function ComboboxChip({
     <ComboboxPrimitive.Chip
       data-slot="combobox-chip"
       className={cn(
-        "flex h-8 w-fit items-center justify-center gap-1 rounded-[10px] bg-knob pr-2.5 pl-3 text-sm font-medium tracking-[-0.01em] whitespace-nowrap text-foreground transition-colors duration-150 outline-none has-disabled:pointer-events-none has-disabled:cursor-not-allowed has-disabled:opacity-50 has-data-[slot=combobox-chip-remove]:pr-1 data-highlighted:bg-[color-mix(in_srgb,var(--knob),var(--foreground)_10%)]",
+        "flex h-8 w-fit items-center justify-center gap-1 rounded-[calc(10px*var(--radius-factor,1))] bg-knob pr-2.5 pl-3 text-sm font-medium tracking-[-0.01em] whitespace-nowrap text-foreground transition-colors duration-150 outline-none has-disabled:pointer-events-none has-disabled:cursor-not-allowed has-disabled:opacity-50 has-data-[slot=combobox-chip-remove]:pr-1 data-highlighted:bg-[color-mix(in_srgb,var(--knob),var(--foreground)_10%)]",
         className
       )}
       {...props}

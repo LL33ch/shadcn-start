@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 /*
-  Toggle: the soft button that stays down. A pill in
+  Toggle: the soft button that stays down. A pill (half its height times --radius-factor) in
   `text-2`; under the pointer it lights up in half a knob, pressed it sits on `knob` in `text`
   (+6% under the pointer). It shrinks to 0.95 under a press. `outline` has no line: it stands
   on `field`. Sizes follow the buttons: 32, 40 and 48.
@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils"
 */
 
 const toggleVariants = cva(
-  "group/toggle inline-flex shrink-0 items-center justify-center gap-2 rounded-full font-medium tracking-[-0.012em] whitespace-nowrap text-muted-foreground transition-[background-color,color,scale] duration-200 ease-(--ease-out) outline-none select-none hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/65 active:scale-95 disabled:pointer-events-none disabled:opacity-50 data-pressed:bg-secondary data-pressed:text-foreground data-pressed:hover:bg-[color-mix(in_srgb,var(--secondary),var(--foreground)_6%)] [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  "group/toggle inline-flex shrink-0 items-center justify-center gap-2 font-medium tracking-[-0.012em] whitespace-nowrap text-muted-foreground transition-[background-color,color,scale] duration-200 ease-(--ease-out) outline-none select-none hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/65 active:scale-95 disabled:pointer-events-none disabled:opacity-50 data-pressed:bg-secondary data-pressed:text-foreground data-pressed:hover:bg-[color-mix(in_srgb,var(--secondary),var(--foreground)_6%)] [&_svg]:pointer-events-none [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -24,9 +24,9 @@ const toggleVariants = cva(
       },
       size: {
         default:
-          "h-10 min-w-10 px-4 text-[15px] has-data-[icon=inline-end]:pr-3.5 has-data-[icon=inline-start]:pl-3.5 [&_svg:not([class*='size-'])]:size-[18px]",
-        sm: "h-8 min-w-8 px-3 text-sm has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5 [&_svg:not([class*='size-'])]:size-4",
-        lg: "h-12 min-w-12 px-5 text-base has-data-[icon=inline-end]:pr-4 has-data-[icon=inline-start]:pl-4 [&_svg:not([class*='size-'])]:size-5",
+          "h-10 min-w-10 rounded-[calc(var(--spacing)*5*var(--radius-factor,1))] px-4 text-[15px] has-data-[icon=inline-end]:pr-3.5 has-data-[icon=inline-start]:pl-3.5 [&_svg:not([class*='size-'])]:size-4.5",
+        sm: "h-8 min-w-8 rounded-[calc(var(--spacing)*4*var(--radius-factor,1))] px-3 text-sm has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5 [&_svg:not([class*='size-'])]:size-4",
+        lg: "h-12 min-w-12 rounded-[calc(var(--spacing)*6*var(--radius-factor,1))] px-5 text-base has-data-[icon=inline-end]:pr-4 has-data-[icon=inline-start]:pl-4 [&_svg:not([class*='size-'])]:size-5",
       },
     },
     defaultVariants: {

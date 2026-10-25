@@ -54,7 +54,7 @@ function AlertDialogContent({
       <AlertDialogPrimitive.Popup
         data-slot="alert-dialog-content"
         className={cn(
-          "group/alert-dialog-content fixed inset-x-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 mx-auto grid h-fit max-h-[calc(100dvh-2rem)] max-w-[400px] gap-5 overflow-y-auto rounded-[36px] bg-card p-6 text-card-foreground shadow-sheet outline-none min-[760px]:top-4 min-[760px]:bottom-4 min-[760px]:my-auto",
+          "group/alert-dialog-content fixed inset-x-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 mx-auto grid h-fit max-h-[calc(100dvh-2rem)] max-w-[400px] gap-5 overflow-y-auto rounded-[calc(36px*var(--radius-factor,1))] bg-card p-6 text-card-foreground outline-none min-[760px]:top-4 min-[760px]:bottom-4 min-[760px]:my-auto",
           className
         )}
         {...props}

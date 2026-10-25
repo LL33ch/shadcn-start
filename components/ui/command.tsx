@@ -32,7 +32,7 @@ function Command({
     <CommandPrimitive
       data-slot="command"
       className={cn(
-        "flex size-full flex-col overflow-hidden rounded-[24px]! bg-card p-1.5 text-card-foreground in-data-[slot=dialog-content]:bg-transparent",
+        "flex size-full flex-col overflow-hidden rounded-[calc(24px*var(--radius-factor,1))]! bg-card p-1.5 text-card-foreground in-data-[slot=dialog-content]:bg-transparent",
         className
       )}
       {...props}
@@ -62,7 +62,7 @@ function CommandDialog({
       </DialogHeader>
       <DialogContent
         className={cn(
-          "max-w-[520px] gap-0 overflow-hidden rounded-[24px] p-0 min-[760px]:top-[18vh] min-[760px]:bottom-auto min-[760px]:my-0",
+          "max-w-[520px] gap-0 overflow-hidden rounded-[calc(24px*var(--radius-factor,1))] p-0 min-[760px]:top-[18vh] min-[760px]:bottom-auto min-[760px]:my-0",
           className
         )}
         showCloseButton={showCloseButton}
@@ -79,7 +79,7 @@ function CommandInput({
 }: React.ComponentProps<typeof CommandPrimitive.Input>) {
   return (
     <div data-slot="command-input-wrapper" className="pb-1.5">
-      <InputGroup className="h-10 rounded-[18px]">
+      <InputGroup className="h-10 rounded-[calc(18px*var(--radius-factor,1))]">
         <CommandPrimitive.Input
           data-slot="command-input"
           className={cn(
@@ -166,7 +166,7 @@ function CommandItem({
     <CommandPrimitive.Item
       data-slot="command-item"
       className={cn(
-        "group/command-item relative flex min-h-[34px] cursor-default items-center gap-2.5 rounded-[18px] px-3.5 py-2 text-[14px]/[18px] tracking-[-0.2px] text-foreground outline-hidden transition-[scale] duration-160 ease-(--ease-out) select-none active:scale-[0.97] data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:transition-[scale,color] [&_svg]:duration-(--spring-glide-dur) [&_svg]:ease-(--spring-glide) [&_svg:not([class*='size-'])]:size-4 [&>svg:not([data-slot])]:text-muted-foreground data-[selected=true]:[&>svg:not([data-slot])]:scale-[1.08] data-[selected=true]:[&>svg:not([data-slot])]:text-foreground",
+        "group/command-item relative flex min-h-8.5 cursor-default items-center gap-2.5 rounded-[calc(18px*var(--radius-factor,1))] px-3.5 py-2 text-[14px]/[18px] tracking-[-0.2px] text-foreground outline-hidden transition-[scale] duration-160 ease-(--ease-out) select-none active:scale-[0.97] data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:transition-[scale,color] [&_svg]:duration-(--spring-glide-dur) [&_svg]:ease-(--spring-glide) [&_svg:not([class*='size-'])]:size-4 [&>svg:not([data-slot])]:text-muted-foreground data-[selected=true]:[&>svg:not([data-slot])]:scale-[1.08] data-[selected=true]:[&>svg:not([data-slot])]:text-foreground",
         className
       )}
       {...props}

@@ -53,7 +53,7 @@ function Toast({ className, ...props }: ToastPrimitive.Root.Props) {
     <ToastPrimitive.Root
       data-slot="toast"
       className={cn(
-        "group/toast pointer-events-auto absolute inset-x-0 bottom-0 mx-auto w-fit max-w-full origin-bottom rounded-[21px] bg-(--toast) text-(--toast-fg) shadow-(--pop-shadow) outline-none select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/65",
+        "group/toast pointer-events-auto absolute inset-x-0 bottom-0 mx-auto w-fit max-w-full origin-bottom rounded-[calc(21px*var(--radius-factor,1))] bg-(--toast) text-(--toast-fg) shadow-(--pop-shadow) outline-none select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/65",
         className
       )}
       {...props}
@@ -66,7 +66,7 @@ function ToastContent({ className, ...props }: ToastPrimitive.Content.Props) {
     <ToastPrimitive.Content
       data-slot="toast-content"
       className={cn(
-        "flex min-h-[42px] items-center gap-2 py-2.5 pr-[18px] pl-[13px] has-data-[slot=toast-close]:pr-2 has-data-[slot=toast-action]:pr-2",
+        "flex min-h-10.5 items-center gap-2 py-2.5 pr-4.5 pl-3.25 has-data-[slot=toast-close]:pr-2 has-data-[slot=toast-action]:pr-2",
         className
       )}
       {...props}
@@ -108,7 +108,7 @@ function ToastAction({ className, ...props }: ToastPrimitive.Action.Props) {
     <ToastPrimitive.Action
       data-slot="toast-action"
       className={cn(
-        "ml-2 inline-flex h-7 shrink-0 items-center rounded-full bg-[color-mix(in_srgb,var(--toast-fg)_12%,transparent)] px-3 text-[13px] font-semibold text-(--toast-fg) transition-[background-color,scale] duration-150 ease-(--ease-out) outline-none hover:bg-[color-mix(in_srgb,var(--toast-fg)_18%,transparent)] focus-visible:outline-2 focus-visible:outline-primary/65 active:scale-95",
+        "ml-2 inline-flex h-7 shrink-0 items-center rounded-[calc(var(--spacing)*3.5*var(--radius-factor,1))] bg-[color-mix(in_srgb,var(--toast-fg)_12%,transparent)] px-3 text-[13px] font-semibold text-(--toast-fg) transition-[background-color,scale] duration-150 ease-(--ease-out) outline-none hover:bg-[color-mix(in_srgb,var(--toast-fg)_18%,transparent)] focus-visible:outline-2 focus-visible:outline-primary/65 active:scale-95",
         className
       )}
       {...props}
@@ -126,7 +126,7 @@ function ToastClose({
       data-slot="toast-close"
       aria-label="Close toast"
       className={cn(
-        "relative grid size-7 shrink-0 place-items-center rounded-full text-[color-mix(in_srgb,var(--toast-fg)_60%,transparent)] transition-[background-color,color,scale] duration-150 ease-(--ease-out) outline-none after:absolute after:-inset-1.5 hover:bg-[color-mix(in_srgb,var(--toast-fg)_12%,transparent)] hover:text-(--toast-fg) focus-visible:outline-2 focus-visible:outline-primary/65 active:scale-80 [&_svg:not([class*='size-'])]:size-3.5",
+        "relative grid size-7 shrink-0 place-items-center rounded-[calc(var(--spacing)*3.5*var(--radius-factor,1))] text-[color-mix(in_srgb,var(--toast-fg)_60%,transparent)] transition-[background-color,color,scale] duration-150 ease-(--ease-out) outline-none after:absolute after:-inset-1.5 hover:bg-[color-mix(in_srgb,var(--toast-fg)_12%,transparent)] hover:text-(--toast-fg) focus-visible:outline-2 focus-visible:outline-primary/65 active:scale-80 [&_svg:not([class*='size-'])]:size-3.5",
         className
       )}
       {...props}
@@ -152,7 +152,7 @@ function ToastIcon({ type }: { type: string | undefined }) {
     <span
       data-slot="toast-icon"
       aria-hidden="true"
-      className="flex shrink-0 self-start pt-0.5 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-[18px]"
+      className="flex shrink-0 self-start pt-0.5 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4.5"
     >
       {icon}
     </span>

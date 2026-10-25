@@ -8,7 +8,8 @@ import { cn } from "@/lib/utils"
 /*
   Chips and badge tiles.
 
-  Badge is the small pill that names a state: 26px, 13px at 600, a tint of its colour with the
+  Badge is the small pill that names a state (half its height times --radius-factor round):
+  26px, 13px at 600, a tint of its colour with the
   colour as text, never a border. The tone is state: accent for the plain one, ok, warn and bad.
   Drawn as a link or a button (`render`) it presses to 0.95 and its tint deepens on hover.
 
@@ -27,7 +28,7 @@ const soft =
   "bg-secondary text-muted-foreground data-interactive:hover:bg-[color-mix(in_srgb,var(--secondary),var(--foreground)_8%)] data-interactive:hover:text-foreground"
 
 const badgeVariants = cva(
-  "group/badge inline-flex w-fit shrink-0 items-center justify-center gap-1.5 overflow-hidden rounded-full font-semibold whitespace-nowrap transition-[background-color,color,scale] duration-200 ease-(--ease-out) outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/65 data-interactive:cursor-pointer data-interactive:active:scale-95 [&>svg]:pointer-events-none [&>svg]:shrink-0",
+  "group/badge inline-flex w-fit shrink-0 items-center justify-center gap-1.5 overflow-hidden font-semibold whitespace-nowrap transition-[background-color,color,scale] duration-200 ease-(--ease-out) outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/65 data-interactive:cursor-pointer data-interactive:active:scale-95 [&>svg]:pointer-events-none [&>svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -46,8 +47,8 @@ const badgeVariants = cva(
       },
       size: {
         default:
-          "h-[26px] px-3 text-[13px] has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5 [&>svg:not([class*='size-'])]:size-3.5",
-        sm: "h-5 gap-1 px-2 text-[11.5px] has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&>svg:not([class*='size-'])]:size-3",
+          "h-6.5 rounded-[calc(var(--spacing)*3.25*var(--radius-factor,1))] px-3 text-[13px] has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5 [&>svg:not([class*='size-'])]:size-3.5",
+        sm: "h-5 gap-1 rounded-[calc(var(--spacing)*2.5*var(--radius-factor,1))] px-2 text-[11.5px] has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&>svg:not([class*='size-'])]:size-3",
       },
     },
     defaultVariants: {
@@ -82,7 +83,7 @@ function Badge({
 }
 
 const tileVariants = cva(
-  "group/badge-tile flex h-[60px] w-full items-center gap-3 rounded-[18px] py-0 pr-3.5 pl-3 text-left transition-[background-color,scale] duration-200 ease-(--ease-out) outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/65 data-interactive:cursor-pointer data-interactive:active:scale-[0.98] [&>svg]:size-4 [&>svg]:shrink-0 [&>svg]:text-faint",
+  "group/badge-tile flex h-15 w-full items-center gap-3 rounded-[calc(18px*var(--radius-factor,1))] py-0 pr-3.5 pl-3 text-left transition-[background-color,scale] duration-200 ease-(--ease-out) outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/65 data-interactive:cursor-pointer data-interactive:active:scale-[0.98] [&>svg]:size-4 [&>svg]:shrink-0 [&>svg]:text-faint",
   {
     variants: {
       inset: {
@@ -126,7 +127,7 @@ function BadgeTileIcon({
       data-slot="badge-tile-icon"
       data-primary={primary ? "" : undefined}
       className={cn(
-        "grid size-9 shrink-0 place-items-center rounded-[10px] bg-foreground text-card data-primary:bg-primary/13 data-primary:text-primary [&>svg]:size-5",
+        "grid size-9 shrink-0 place-items-center rounded-[calc(10px*var(--radius-factor,1))] bg-foreground text-card data-primary:bg-primary/13 data-primary:text-primary [&>svg]:size-5",
         className
       )}
       {...props}

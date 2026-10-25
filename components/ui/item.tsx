@@ -46,7 +46,7 @@ function ItemSeparator({
 }
 
 const itemVariants = cva(
-  "group/item flex w-full flex-wrap items-center rounded-[18px] text-left transition-[background-color,scale] duration-200 ease-(--ease-out) outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/65 [a]:active:scale-[0.98]",
+  "group/item flex w-full flex-wrap items-center rounded-[calc(18px*var(--radius-factor,1))] text-left transition-[background-color,scale] duration-200 ease-(--ease-out) outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/65 [a]:active:scale-[0.98]",
   {
     variants: {
       variant: {
@@ -58,8 +58,8 @@ const itemVariants = cva(
       },
       size: {
         default: "gap-3 py-3 pr-3 pl-3.5",
-        sm: "gap-2.5 rounded-[16px] py-2.5 pr-2.5 pl-3",
-        xs: "gap-2 rounded-[14px] px-2.5 py-2 in-data-[slot=dropdown-menu-content]:p-0",
+        sm: "gap-2.5 rounded-[calc(16px*var(--radius-factor,1))] py-2.5 pr-2.5 pl-3",
+        xs: "gap-2 rounded-[calc(14px*var(--radius-factor,1))] px-2.5 py-2 in-data-[slot=dropdown-menu-content]:p-0",
       },
     },
     defaultVariants: {
@@ -99,9 +99,9 @@ const itemMediaVariants = cva(
     variants: {
       variant: {
         default: "bg-transparent",
-        icon: "size-9 rounded-[10px] bg-knob text-foreground group-data-[size=sm]/item:size-8 group-data-[size=sm]/item:rounded-[9px] group-data-[size=xs]/item:size-6 group-data-[size=xs]/item:rounded-[7px] [&_svg:not([class*='size-'])]:size-[18px] group-data-[size=sm]/item:[&_svg:not([class*='size-'])]:size-4 group-data-[size=xs]/item:[&_svg:not([class*='size-'])]:size-3.5",
+        icon: "size-9 rounded-[calc(10px*var(--radius-factor,1))] bg-knob text-foreground group-data-[size=sm]/item:size-8 group-data-[size=sm]/item:rounded-[calc(9px*var(--radius-factor,1))] group-data-[size=xs]/item:size-6 group-data-[size=xs]/item:rounded-[calc(7px*var(--radius-factor,1))] [&_svg:not([class*='size-'])]:size-4.5 group-data-[size=sm]/item:[&_svg:not([class*='size-'])]:size-4 group-data-[size=xs]/item:[&_svg:not([class*='size-'])]:size-3.5",
         image:
-          "size-10 overflow-hidden rounded-[10px] group-data-[size=sm]/item:size-8 group-data-[size=sm]/item:rounded-[9px] group-data-[size=xs]/item:size-6 group-data-[size=xs]/item:rounded-[7px] [&_img]:size-full [&_img]:object-cover",
+          "size-10 overflow-hidden rounded-[calc(10px*var(--radius-factor,1))] group-data-[size=sm]/item:size-8 group-data-[size=sm]/item:rounded-[calc(9px*var(--radius-factor,1))] group-data-[size=xs]/item:size-6 group-data-[size=xs]/item:rounded-[calc(7px*var(--radius-factor,1))] [&_img]:size-full [&_img]:object-cover",
       },
     },
     defaultVariants: {

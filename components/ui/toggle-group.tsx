@@ -50,7 +50,7 @@ function ToggleGroup({
       data-orientation={orientation}
       style={{ "--gap": spacing } as React.CSSProperties}
       className={cn(
-        "group/toggle-group flex w-fit flex-row items-center gap-[--spacing(var(--gap))] data-vertical:flex-col data-vertical:items-stretch data-[spacing=0]:gap-0.5 data-[spacing=0]:rounded-[16px] data-[spacing=0]:bg-field data-[spacing=0]:p-1 data-[spacing=0]:data-[size=lg]:rounded-[18px] data-[spacing=0]:data-[size=sm]:rounded-[14px]",
+        "group/toggle-group flex w-fit flex-row items-center gap-[--spacing(var(--gap))] data-vertical:flex-col data-vertical:items-stretch data-[spacing=0]:gap-0.5 data-[spacing=0]:rounded-[calc(16px*var(--radius-factor,1))] data-[spacing=0]:bg-field data-[spacing=0]:p-1 data-[spacing=0]:data-[size=lg]:rounded-[calc(18px*var(--radius-factor,1))] data-[spacing=0]:data-[size=sm]:rounded-[calc(14px*var(--radius-factor,1))]",
         className
       )}
       {...props}
@@ -86,7 +86,7 @@ function ToggleGroupItem({
         }),
         "focus-visible:z-10",
         // In a track: clear, square-ish segments, the pressed ones on the picked pill.
-        "data-[spacing=0]:rounded-[12px] data-[spacing=0]:bg-transparent data-[spacing=0]:hover:bg-transparent data-[spacing=0]:data-pressed:bg-(--seg) data-[spacing=0]:data-pressed:shadow-(--seg-shadow) data-[spacing=0]:data-pressed:hover:bg-(--seg) data-[spacing=0]:data-[size=lg]:rounded-[14px] data-[spacing=0]:data-[size=sm]:rounded-[10px]",
+        "data-[spacing=0]:rounded-[calc(12px*var(--radius-factor,1))] data-[spacing=0]:bg-transparent data-[spacing=0]:hover:bg-transparent data-[spacing=0]:data-pressed:bg-(--seg) data-[spacing=0]:data-pressed:shadow-(--seg-shadow) data-[spacing=0]:data-pressed:hover:bg-(--seg) data-[spacing=0]:data-[size=lg]:rounded-[calc(14px*var(--radius-factor,1))] data-[spacing=0]:data-[size=sm]:rounded-[calc(10px*var(--radius-factor,1))]",
         className
       )}
       {...props}

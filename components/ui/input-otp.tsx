@@ -60,7 +60,7 @@ function InputOTPSlot({
       data-slot="input-otp-slot"
       data-active={isActive}
       className={cn(
-        "relative flex size-12 items-center justify-center rounded-[16px] bg-field text-lg font-medium text-foreground shadow-[inset_0_0_0_1.5px_transparent] transition-shadow duration-300 ease-(--ease-out) outline-none aria-invalid:shadow-[inset_0_0_0_1.5px_var(--destructive)] data-[active=true]:shadow-[inset_0_0_0_1.5px_color-mix(in_srgb,var(--foreground)_16%,transparent)] data-[active=true]:aria-invalid:shadow-[inset_0_0_0_1.5px_var(--destructive)]",
+        "relative flex size-12 items-center justify-center rounded-[calc(16px*var(--radius-factor,1))] bg-field text-lg font-medium text-foreground shadow-[inset_0_0_0_1.5px_transparent] transition-shadow duration-300 ease-(--ease-out) outline-none aria-invalid:shadow-[inset_0_0_0_1.5px_var(--destructive)] data-[active=true]:shadow-[inset_0_0_0_1.5px_color-mix(in_srgb,var(--foreground)_16%,transparent)] data-[active=true]:aria-invalid:shadow-[inset_0_0_0_1.5px_var(--destructive)]",
         className
       )}
       {...props}
@@ -68,7 +68,7 @@ function InputOTPSlot({
       {char}
       {hasFakeCaret && (
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-          <div className="h-5 w-0.5 animate-caret-blink rounded-[1px] bg-primary duration-1000" />
+          <div className="h-5 w-0.5 animate-caret-blink rounded-[calc(1px*var(--radius-factor,1))] bg-primary duration-1000" />
         </div>
       )}
     </div>

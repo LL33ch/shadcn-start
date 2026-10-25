@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils"
 */
 
 const row =
-  "group/context-menu-item relative flex min-h-[34px] cursor-default items-center gap-2.5 rounded-[18px] px-3.5 py-2 text-[14px]/[18px] font-normal tracking-[-0.2px] text-(--glass-text) outline-hidden transition-[background-color,color,scale] duration-160 ease-(--ease-out) select-none active:scale-[0.97] data-disabled:pointer-events-none data-disabled:opacity-50 data-inset:pl-10 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:transition-[scale] [&_svg]:duration-(--spring-glide-dur) [&_svg]:ease-(--spring-glide) data-highlighted:[&_svg]:scale-[1.08] [&_svg:not([class*='size-'])]:size-4"
+  "group/context-menu-item relative flex min-h-8.5 cursor-default items-center gap-2.5 rounded-[calc(18px*var(--radius-factor,1))] px-3.5 py-2 text-[14px]/[18px] font-normal tracking-[-0.2px] text-(--glass-text) outline-hidden transition-[background-color,color,scale] duration-160 ease-(--ease-out) select-none active:scale-[0.97] data-disabled:pointer-events-none data-disabled:opacity-50 data-inset:pl-10 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:transition-[scale] [&_svg]:duration-(--spring-glide-dur) [&_svg]:ease-(--spring-glide) data-highlighted:[&_svg]:scale-[1.08] [&_svg:not([class*='size-'])]:size-4"
 
 function ContextMenu({ ...props }: ContextMenuPrimitive.Root.Props) {
   return <ContextMenuPrimitive.Root data-slot="context-menu" {...props} />
@@ -67,7 +67,7 @@ function ContextMenuContent({
         <ContextMenuPrimitive.Popup
           data-slot="context-menu-content"
           className={cn(
-            "relative max-h-(--available-height) min-w-[210px] origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-[24px] p-1.5 text-(--glass-text) shadow-[inset_0_0_0_1px_var(--glass-edge),var(--glass-shadow)] backdrop-blur-[28px] backdrop-saturate-[1.8] outline-none [background:var(--glass-bg)]",
+            "relative max-h-(--available-height) min-w-[210px] origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-[calc(24px*var(--radius-factor,1))] p-1.5 text-(--glass-text) shadow-[inset_0_0_0_1px_var(--glass-edge),var(--glass-shadow)] backdrop-blur-[28px] backdrop-saturate-[1.8] outline-none [background:var(--glass-bg)]",
             className
           )}
           {...props}

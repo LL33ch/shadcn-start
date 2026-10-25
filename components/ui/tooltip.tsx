@@ -60,7 +60,7 @@ function TooltipContent({
         <TooltipPrimitive.Popup
           data-slot="tooltip-content"
           className={cn(
-            "inline-flex h-[26px] w-fit max-w-xs origin-(--transform-origin) items-center gap-1.5 rounded-full bg-(--toast) px-2.5 text-xs font-medium tracking-[-0.1px] whitespace-nowrap text-(--toast-fg) shadow-[var(--pop-shadow),0_0_0_1px_var(--line)] has-data-[slot=kbd]:pr-1 **:data-[slot=kbd]:h-[18px] **:data-[slot=kbd]:min-w-[18px] **:data-[slot=kbd]:rounded-full **:data-[slot=kbd]:bg-[color-mix(in_srgb,var(--toast-fg)_14%,transparent)] **:data-[slot=kbd]:px-1.5 **:data-[slot=kbd]:text-(--toast-fg) **:data-[slot=kbd]:shadow-none",
+            "inline-flex h-6.5 w-fit max-w-xs origin-(--transform-origin) items-center gap-1.5 rounded-[calc(var(--spacing)*3.25*var(--radius-factor,1))] bg-(--toast) px-2.5 text-xs font-medium tracking-[-0.1px] whitespace-nowrap text-(--toast-fg) shadow-[var(--pop-shadow),0_0_0_1px_var(--line)] has-data-[slot=kbd]:pr-1 **:data-[slot=kbd]:h-4.5 **:data-[slot=kbd]:min-w-4.5 **:data-[slot=kbd]:rounded-full **:data-[slot=kbd]:bg-[color-mix(in_srgb,var(--toast-fg)_14%,transparent)] **:data-[slot=kbd]:px-1.5 **:data-[slot=kbd]:text-(--toast-fg) **:data-[slot=kbd]:shadow-none",
             className
           )}
           {...props}

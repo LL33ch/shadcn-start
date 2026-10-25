@@ -111,6 +111,9 @@ export default function InstallationPage() {
             {`The theme puts the colour tokens for light and dark, the spring curves and the shared motion of menus, sheets, toasts and tabs into your CSS file, and replaces the colours \`init\` wrote. Add it by name before anything else: a component brings the theme along too, but then the CLI only adds the tokens that are missing and leaves \`init\`'s colours in place.`}
           </Prose>
           <Code code={addCommand("theme")} lang="bash" className="mt-4" />
+          <Prose className="mt-4">
+            {`To change the accent, the colours, the radius or the density, make your theme on [Create](/create) and paste the CSS it gives you at the end of your CSS file.`}
+          </Prose>
         </Step>
 
         <Step n={4} title="Add components">

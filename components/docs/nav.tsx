@@ -26,6 +26,7 @@ export interface NavItem {
 const GUIDES = [
   { href: "/", title: "Introduction" },
   { href: "/docs/installation", title: "Installation" },
+  { href: "/create", title: "Create a theme" },
 ]
 
 function NavList({

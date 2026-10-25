@@ -37,7 +37,7 @@ const tabsListVariants = cva(
   {
     variants: {
       variant: {
-        default: "rounded-[16px] bg-field p-1",
+        default: "rounded-[calc(16px*var(--radius-factor,1))] bg-field p-1",
         line: "gap-1 bg-transparent",
       },
     },
@@ -74,7 +74,7 @@ function TabsTrigger({ className, ...props }: TabsPrimitive.Tab.Props) {
     <TabsPrimitive.Tab
       data-slot="tabs-trigger"
       className={cn(
-        "relative z-1 inline-flex h-full flex-1 items-center justify-center gap-1.5 rounded-[12px] px-3.5 text-sm font-medium tracking-[-0.01em] whitespace-nowrap text-muted-foreground transition-colors duration-200 outline-none group-data-vertical/tabs:h-8 group-data-vertical/tabs:w-full group-data-vertical/tabs:justify-start hover:text-foreground focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-primary/65 disabled:pointer-events-none disabled:opacity-50 has-data-[icon=inline-end]:pr-3 has-data-[icon=inline-start]:pl-3 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-active:text-foreground group-data-[variant=line]/tabs-list:rounded-[10px] group-data-[variant=line]/tabs-list:px-3 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "relative z-1 inline-flex h-full flex-1 items-center justify-center gap-1.5 rounded-[calc(12px*var(--radius-factor,1))] px-3.5 text-sm font-medium tracking-[-0.01em] whitespace-nowrap text-muted-foreground transition-colors duration-200 outline-none group-data-vertical/tabs:h-8 group-data-vertical/tabs:w-full group-data-vertical/tabs:justify-start hover:text-foreground focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-primary/65 disabled:pointer-events-none disabled:opacity-50 has-data-[icon=inline-end]:pr-3 has-data-[icon=inline-start]:pl-3 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-active:text-foreground group-data-[variant=line]/tabs-list:rounded-[calc(10px*var(--radius-factor,1))] group-data-[variant=line]/tabs-list:px-3 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}

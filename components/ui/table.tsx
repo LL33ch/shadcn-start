@@ -68,7 +68,7 @@ function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
     <tr
       data-slot="table-row"
       className={cn(
-        "[&>td]:transition-colors [&>td]:duration-150 [&>td:first-child]:rounded-l-[14px] [&>td:last-child]:rounded-r-[14px]",
+        "[&>td]:transition-colors [&>td]:duration-150 [&>td:first-child]:rounded-l-[calc(14px*var(--radius-factor,1))] [&>td:last-child]:rounded-r-[calc(14px*var(--radius-factor,1))]",
         "hover:[&>td]:bg-[color-mix(in_srgb,var(--foreground)_4%,transparent)] has-aria-expanded:[&>td]:bg-[color-mix(in_srgb,var(--foreground)_4%,transparent)]",
         "data-[state=selected]:[&>td]:bg-[color-mix(in_srgb,var(--primary)_10%,transparent)] data-[state=selected]:hover:[&>td]:bg-[color-mix(in_srgb,var(--primary)_14%,transparent)]",
         className

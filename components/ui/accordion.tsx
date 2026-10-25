@@ -36,9 +36,9 @@ function AccordionItem({ className, ...props }: AccordionPrimitive.Item.Props) {
         "group/item overflow-hidden bg-card px-2 [--acc-pl:--spacing(2)] has-data-[slot=accordion-icon]:[--acc-pl:--spacing(10)]",
         "[transition:margin_var(--spring-bouncy-dur)_var(--spring-bouncy),border-radius_var(--spring-bouncy-dur)_var(--spring-bouncy),background-color_150ms_ease-out]",
         // Closed rows touch: only the ends of the stack, and the sides facing an open row, are round.
-        "first:rounded-t-[20px] last:rounded-b-[20px] has-[+[data-open]]:rounded-b-[20px] [[data-open]+&]:rounded-t-[20px]",
+        "first:rounded-t-[calc(20px*var(--radius-factor,1))] last:rounded-b-[calc(20px*var(--radius-factor,1))] has-[+[data-open]]:rounded-b-[calc(20px*var(--radius-factor,1))] [[data-open]+&]:rounded-t-[calc(20px*var(--radius-factor,1))]",
         // An open row lifts out; the stack's first and last rows keep their outer edge.
-        "data-open:my-2.5 data-open:rounded-[20px] first:data-open:mt-0 last:data-open:mb-0",
+        "data-open:my-2.5 data-open:rounded-[calc(20px*var(--radius-factor,1))] first:data-open:mt-0 last:data-open:mb-0",
         "not-data-open:not-data-disabled:hover:bg-[color-mix(in_srgb,var(--card),var(--knob)_40%)]",
         "group-data-[variant=inset]/accordion:bg-field",
         "group-data-[variant=inset]/accordion:not-data-open:not-data-disabled:hover:bg-[color-mix(in_srgb,var(--field),var(--knob)_50%)]",
@@ -67,7 +67,7 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "group/trigger flex h-[52px] w-full items-center gap-2.5 rounded-[14px] pr-1.5 pl-2 text-left text-[15px] font-medium tracking-[-0.02em] outline-none focus-visible:ring-2 focus-visible:ring-primary/60 disabled:pointer-events-none",
+          "group/trigger flex h-13 w-full items-center gap-2.5 rounded-[calc(14px*var(--radius-factor,1))] pr-1.5 pl-2 text-left text-[15px] font-medium tracking-[-0.02em] outline-none focus-visible:ring-2 focus-visible:ring-primary/60 disabled:pointer-events-none",
           className
         )}
         {...props}
@@ -75,7 +75,7 @@ function AccordionTrigger({
         {icon && (
           <span
             data-slot="accordion-icon"
-            className="flex size-[22px] flex-none items-center justify-center [&>svg]:size-full"
+            className="flex size-5.5 flex-none items-center justify-center [&>svg]:size-full"
           >
             {icon}
           </span>

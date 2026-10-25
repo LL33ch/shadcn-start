@@ -42,6 +42,15 @@ export default function DocsLayout({
               variant="ghost"
               size="sm"
               nativeButton={false}
+              render={<Link href="/create" />}
+              className="text-muted-foreground hover:text-foreground"
+            >
+              Create
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              nativeButton={false}
               render={<Link href="/blocks" />}
               className="text-muted-foreground hover:text-foreground"
             >

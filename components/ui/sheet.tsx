@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 
 /*
   Panel from an edge. A raised surface with a
-  36px radius and the sheet's shadow, floating 16px off the edges (and the safe areas), at most
+  36px radius and no shadow, floating 16px off the edges (and the safe areas), at most
   400 wide from the left or the right. It comes in from its side, `100% + 40px` away, in 500ms on
   the drawer curve and goes back in 420ms; the scrim only dims, 420ms in and 320ms out. The ×
   is a soft knob at top 22 / right 22. Padding 24, the title 20/28 at 500.
@@ -63,7 +63,7 @@ function SheetContent({
         data-side={side}
         data-closable={showCloseButton ? "" : undefined}
         className={cn(
-          "group/sheet fixed z-50 flex flex-col gap-5 overflow-hidden rounded-[36px] bg-card text-sm text-card-foreground shadow-sheet transition-[translate] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] outline-none data-ending-style:duration-420",
+          "group/sheet fixed z-50 flex flex-col gap-5 overflow-hidden rounded-[calc(36px*var(--radius-factor,1))] bg-card text-sm text-card-foreground transition-[translate] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] outline-none data-ending-style:duration-420",
           // Left and right: the height of the screen less the gutters, at most 400 wide.
           "data-[side=left]:inset-y-4 data-[side=left]:left-4 data-[side=right]:inset-y-4 data-[side=right]:right-4 data-[side=left]:w-[calc(100%-2rem)] data-[side=right]:w-[calc(100%-2rem)] data-[side=left]:max-w-[400px] data-[side=right]:max-w-[400px]",
           // Top and bottom: the width of the screen less the gutters, as high as it needs.
@@ -82,7 +82,7 @@ function SheetContent({
               <Button
                 variant="soft"
                 size="icon"
-                className="absolute top-[22px] right-[22px]"
+                className="absolute top-5.5 right-5.5"
               />
             }
           >

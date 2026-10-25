@@ -5,7 +5,8 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 /*
-  Button. A pill, 48px high, that shrinks to 0.95 under a press.
+  Button. A pill, 40px high, that shrinks to 0.95 under a press. Its radius is half its height
+  times --radius-factor: a pill at 100%, square at 0.
   accent is the one primary action, tint a quiet primary, soft a control on any surface, red the
   destructive one. Waiting: the button keeps its size, its content blurs away and the orb comes up
   through the blur in the button's own colour. The motion lives in app/globals.css.
@@ -20,7 +21,7 @@ const soft =
   "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_srgb,var(--secondary),var(--foreground)_6%)] aria-expanded:bg-[color-mix(in_srgb,var(--secondary),var(--foreground)_10%)]"
 
 const buttonVariants = cva(
-  "group/button relative inline-flex shrink-0 items-center justify-center rounded-full text-base font-medium tracking-[-0.015em] whitespace-nowrap transition-[scale,background-color,color,opacity] duration-200 ease-(--ease-out) outline-none select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/65 active:scale-95 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  "group/button relative inline-flex shrink-0 items-center justify-center text-base font-medium tracking-[-0.015em] whitespace-nowrap transition-[scale,background-color,color,opacity] duration-200 ease-(--ease-out) outline-none select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/65 active:scale-95 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -38,17 +39,17 @@ const buttonVariants = cva(
       },
       size: {
         default:
-          "h-10 gap-2 px-5 has-data-[icon=inline-end]:pr-4 has-data-[icon=inline-start]:pl-4 [&_svg:not([class*='size-'])]:size-[18px]",
-        sm: "h-8 gap-2 px-4 text-[15px] has-data-[icon=inline-end]:pr-3.5 has-data-[icon=inline-start]:pl-3.5 [&_svg:not([class*='size-'])]:size-4",
-        xs: "h-6 gap-1.5 px-3 text-[13px] active:scale-[0.94] [&_svg:not([class*='size-'])]:size-3.5",
-        lg: "h-12 gap-2.5 px-7 text-lg [&_svg:not([class*='size-'])]:size-5",
-        icon: "size-8 p-0 duration-150 active:scale-80 [&_svg:not([class*='size-'])]:size-4",
+          "h-10 gap-2 px-5 rounded-[calc(var(--spacing)*5*var(--radius-factor,1))] has-data-[icon=inline-end]:pr-4 has-data-[icon=inline-start]:pl-4 [&_svg:not([class*='size-'])]:size-4.5",
+        sm: "h-8 gap-2 px-4 rounded-[calc(var(--spacing)*4*var(--radius-factor,1))] text-[15px] has-data-[icon=inline-end]:pr-3.5 has-data-[icon=inline-start]:pl-3.5 [&_svg:not([class*='size-'])]:size-4",
+        xs: "h-6 gap-1.5 px-3 rounded-[calc(var(--spacing)*3*var(--radius-factor,1))] text-[13px] active:scale-[0.94] [&_svg:not([class*='size-'])]:size-3.5",
+        lg: "h-12 gap-2.5 px-7 rounded-[calc(var(--spacing)*6*var(--radius-factor,1))] text-lg [&_svg:not([class*='size-'])]:size-5",
+        icon: "size-8 rounded-[calc(var(--spacing)*4*var(--radius-factor,1))] p-0 duration-150 active:scale-80 [&_svg:not([class*='size-'])]:size-4",
         "icon-xs":
-          "size-6 p-0 duration-150 active:scale-80 [&_svg:not([class*='size-'])]:size-3",
+          "size-6 rounded-[calc(var(--spacing)*3*var(--radius-factor,1))] p-0 duration-150 active:scale-80 [&_svg:not([class*='size-'])]:size-3",
         "icon-sm":
-          "size-7 p-0 duration-150 active:scale-80 [&_svg:not([class*='size-'])]:size-3.5",
+          "size-7 rounded-[calc(var(--spacing)*3.5*var(--radius-factor,1))] p-0 duration-150 active:scale-80 [&_svg:not([class*='size-'])]:size-3.5",
         "icon-lg":
-          "size-10 p-0 duration-150 active:scale-[0.85] [&_svg:not([class*='size-'])]:size-[18px]",
+          "size-10 rounded-[calc(var(--spacing)*5*var(--radius-factor,1))] p-0 duration-150 active:scale-[0.85] [&_svg:not([class*='size-'])]:size-4.5",
       },
     },
     compoundVariants: [

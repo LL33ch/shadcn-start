@@ -25,6 +25,8 @@ npx shadcn@latest add @shadcn-start/button @shadcn-start/dialog @shadcn-start/se
 
 The theme replaces the colour tokens `init` wrote, so add it by name: a component brings it along too, but then only the missing tokens are added. The full guide, with the layout set-up, is on the Installation page of the docs.
 
+To make it your own, open `/create` in the docs: pick the accent and colours for light and dark, the radius and the density, then copy the CSS to the end of `globals.css`.
+
 ## Develop
 
 ```bash
@@ -42,6 +44,7 @@ npm run lint
 | `components/docs` | The docs: `mdx` and `examples` (from shadcn-ui/ui `apps/v4`), and the generated content |
 | `app/(docs)` | The docs routes: `/`, `/docs/installation`, `/docs/<component>` |
 | `app/blocks` | A gallery of shadcn blocks built from the kit |
+| `app/create`, `components/create` | The theme editor: colours, radius and density, copied out as CSS |
 
 After changing `components/docs/mdx` or `components/docs/examples`, rebuild the docs content:
 

@@ -22,7 +22,7 @@ function InputGroup({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="input-group"
       role="group"
       className={cn(
-        "group/input-group relative flex h-12 w-full min-w-0 items-center rounded-[16px] bg-field shadow-[inset_0_0_0_1.5px_transparent] transition-shadow duration-300 ease-(--ease-out) outline-none in-data-[slot=combobox-content]:focus-within:shadow-none has-disabled:opacity-50 has-[[data-slot=input-group-control]:focus-visible]:shadow-[inset_0_0_0_1.5px_color-mix(in_srgb,var(--foreground)_16%,transparent)] has-[[data-slot][aria-invalid=true]]:shadow-[inset_0_0_0_1.5px_var(--destructive)] has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-2 has-[>[data-align=inline-start]]:[&>input]:pl-2",
+        "group/input-group relative flex h-12 w-full min-w-0 items-center rounded-[calc(16px*var(--radius-factor,1))] bg-field shadow-[inset_0_0_0_1.5px_transparent] transition-shadow duration-300 ease-(--ease-out) outline-none in-data-[slot=combobox-content]:focus-within:shadow-none has-disabled:opacity-50 has-[[data-slot=input-group-control]:focus-visible]:shadow-[inset_0_0_0_1.5px_color-mix(in_srgb,var(--foreground)_16%,transparent)] has-[[data-slot][aria-invalid=true]]:shadow-[inset_0_0_0_1.5px_var(--destructive)] has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-2 has-[>[data-align=inline-start]]:[&>input]:pl-2",
         className
       )}
       {...props}
@@ -31,7 +31,7 @@ function InputGroup({ className, ...props }: React.ComponentProps<"div">) {
 }
 
 const inputGroupAddonVariants = cva(
-  "flex h-auto items-center justify-center gap-2 text-[15px] font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[8px] [&>svg:not([class*='size-'])]:size-[18px]",
+  "flex h-auto items-center justify-center gap-2 text-[15px] font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(8px*var(--radius-factor,1))] [&>svg:not([class*='size-'])]:size-4.5",
   {
     variants: {
       align: {
@@ -68,10 +68,10 @@ function InputGroupAddon({
 const inputGroupButtonVariants = cva("flex items-center gap-2 shadow-none", {
   variants: {
     size: {
-      xs: "h-8 gap-1.5 rounded-[12px] px-3 text-[15px] [&>svg:not([class*='size-'])]:size-4",
-      sm: "h-10 rounded-[12px] px-4",
-      "icon-xs": "size-8 rounded-[12px] p-0 has-[>svg]:p-0",
-      "icon-sm": "h-10 w-12 rounded-[12px] p-0 has-[>svg]:p-0",
+      xs: "h-8 gap-1.5 rounded-[calc(12px*var(--radius-factor,1))] px-3 text-[15px] [&>svg:not([class*='size-'])]:size-4",
+      sm: "h-10 rounded-[calc(12px*var(--radius-factor,1))] px-4",
+      "icon-xs": "size-8 rounded-[calc(12px*var(--radius-factor,1))] p-0 has-[>svg]:p-0",
+      "icon-sm": "h-10 w-12 rounded-[calc(12px*var(--radius-factor,1))] p-0 has-[>svg]:p-0",
     },
   },
   defaultVariants: {
@@ -104,7 +104,7 @@ function InputGroupText({ className, ...props }: React.ComponentProps<"span">) {
   return (
     <span
       className={cn(
-        "flex items-center gap-2 text-[15px] text-muted-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-[18px]",
+        "flex items-center gap-2 text-[15px] text-muted-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4.5",
         className
       )}
       {...props}

@@ -18,10 +18,10 @@ const bad =
 
 const alertVariants = cva(
   [
-    "group/alert relative grid w-full grid-cols-[1fr] items-center gap-x-3.5 rounded-3xl py-3.5 pr-[18px] pl-3.5 text-left text-sm",
+    "group/alert relative grid w-full grid-cols-[1fr] items-center gap-x-3.5 rounded-3xl py-3.5 pr-4.5 pl-3.5 text-left text-sm",
     "has-data-[slot=alert-icon]:grid-cols-[auto_1fr] has-[>svg]:grid-cols-[auto_1fr]",
     "has-data-[slot=alert-action]:grid-cols-[1fr_auto] has-data-[slot=alert-icon]:has-data-[slot=alert-action]:grid-cols-[auto_1fr_auto] has-[>svg]:has-data-[slot=alert-action]:grid-cols-[auto_1fr_auto]",
-    "*:[svg]:row-span-2 *:[svg:not([class*='size-'])]:size-[18px]",
+    "*:[svg]:row-span-2 *:[svg:not([class*='size-'])]:size-4.5",
     "motion-safe:animate-[notice-in_var(--spring-soft-dur)_var(--spring-soft)_backwards]",
   ],
   {
@@ -61,7 +61,7 @@ function AlertIcon({ className, ...props }: React.ComponentProps<"span">) {
     <span
       data-slot="alert-icon"
       className={cn(
-        "row-span-2 flex size-9 items-center justify-center [&>svg:not([class*='size-'])]:size-[18px]",
+        "row-span-2 flex size-9 items-center justify-center [&>svg:not([class*='size-'])]:size-4.5",
         className
       )}
       {...props}
