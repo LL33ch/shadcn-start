@@ -501,14 +501,15 @@
 }
 
 /*
-  Dropdown and context menus, the lists of a combobox and a select, and the popover
-  (dropdown-menu.tsx, context-menu.tsx, combobox.tsx, select.tsx, popover.tsx). It grows out
-  of its button (or the pointer) on SOFT, `scale .5, blur 6 -> 0` from the side it hangs off
-  (the transform origin Base UI computes), and goes back towards it in 110ms EASE_IN
+  Dropdown and context menus, the lists of a combobox and a select, the popover and the hover
+  card (dropdown-menu.tsx, context-menu.tsx, combobox.tsx, select.tsx, popover.tsx,
+  hover-card.tsx). It grows out of its button (or the pointer) on SOFT, `scale .5, blur 6 -> 0`
+  from the side it hangs off (the transform origin Base UI computes), and goes back towards it
+  in 110ms EASE_IN
   (`scale .7`, blur 4): quicker than it came. A select's list laid over its trigger opens
   where it stands, so it only swells from `.96`.
 */
-:is([data-slot="dropdown-menu-content"], [data-slot="dropdown-menu-sub-content"], [data-slot="context-menu-content"], [data-slot="context-menu-sub-content"], [data-slot="combobox-content"], [data-slot="popover-content"], [data-slot="select-content"]) {
+:is([data-slot="dropdown-menu-content"], [data-slot="dropdown-menu-sub-content"], [data-slot="context-menu-content"], [data-slot="context-menu-sub-content"], [data-slot="combobox-content"], [data-slot="popover-content"], [data-slot="hover-card-content"], [data-slot="select-content"]) {
   scale: 1;
   opacity: 1;
   filter: none;
@@ -517,12 +518,12 @@
     opacity var(--spring-soft-dur) var(--spring-soft),
     filter var(--spring-soft-dur) var(--spring-soft);
 }
-:is([data-slot="dropdown-menu-content"], [data-slot="dropdown-menu-sub-content"], [data-slot="context-menu-content"], [data-slot="context-menu-sub-content"], [data-slot="combobox-content"], [data-slot="popover-content"], [data-slot="select-content"])[data-starting-style] {
+:is([data-slot="dropdown-menu-content"], [data-slot="dropdown-menu-sub-content"], [data-slot="context-menu-content"], [data-slot="context-menu-sub-content"], [data-slot="combobox-content"], [data-slot="popover-content"], [data-slot="hover-card-content"], [data-slot="select-content"])[data-starting-style] {
   scale: 0.5;
   opacity: 0;
   filter: blur(6px);
 }
-:is([data-slot="dropdown-menu-content"], [data-slot="dropdown-menu-sub-content"], [data-slot="context-menu-content"], [data-slot="context-menu-sub-content"], [data-slot="combobox-content"], [data-slot="popover-content"], [data-slot="select-content"])[data-ending-style] {
+:is([data-slot="dropdown-menu-content"], [data-slot="dropdown-menu-sub-content"], [data-slot="context-menu-content"], [data-slot="context-menu-sub-content"], [data-slot="combobox-content"], [data-slot="popover-content"], [data-slot="hover-card-content"], [data-slot="select-content"])[data-ending-style] {
   scale: 0.7;
   opacity: 0;
   filter: blur(4px);

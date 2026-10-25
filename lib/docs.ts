@@ -48,6 +48,7 @@ export const restyled = new Set([
   "drawer",
   "dropdown-menu",
   "glass-icon",
+  "hover-card",
   "input",
   "input-group",
   "input-otp",
